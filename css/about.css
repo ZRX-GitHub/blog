@@ -1,0 +1,14 @@
+@charset "utf-8";
+/* CSS Document */
+.about  {
+	padding: 10px 12px;
+	text-align: justify;	
+	line-height: 26px;
+}
+.point, li {
+	font-size: 11px;
+	color: #8E8989;
+}
+li {
+	margin-left: 12px;
+}

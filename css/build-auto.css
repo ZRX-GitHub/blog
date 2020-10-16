@@ -1,0 +1,136 @@
+@charset "utf-8";
+/* CSS Document */
+
+@media all and (min-width: 960px) {
+
+	.main {
+		width: 90%;
+		padding: 10px 0px;
+		margin:  20px auto 20px;
+		clear: both;
+	}
+	/*
+	左半边位置
+	*/
+	.build-left {
+		width: 74%;
+		text-align: justify;
+		border-radius: 8px;
+		background: #ffffff;
+		box-shadow: 0px 0px 4px #D4D4D4;
+		float: left;
+	}
+	hr {
+		clear: both;
+		margin: 15px 0;
+		height: 0px;
+		overflow: hidden;
+		border: none;
+		background: transparent;
+		border-bottom: 4px solid #ddd;
+		padding: 0;
+	}
+	.article {
+		padding: 30px 20px 10px 20px;
+	}
+	.article a:hover {
+		color: rgb(255,186,20);
+	}
+	.article .img-max-t img {
+		width: 100%;
+		max-width: 673px;
+	}
+	/*
+	右半边位置
+	*/
+	.build-right {
+		width: 24%;
+		float: right;
+		right: 30px;
+		margin-left: 2%;
+		position: fixed;
+	}
+	.siderbar {
+			width: 100%;
+			height: auto; 
+			border-radius: 8px;
+			padding-bottom: 8px;
+			background: #D7B09D;
+			box-shadow: 0px 4px 4px gray;
+		}
+	.label {
+		padding: 5px 0px 5px 9px;
+	}
+	.label p {
+		font-weight: bold;
+		color: #000000;
+	}
+	.label-line {
+		width: 100%;
+		margin: 0px auto;
+		border: 0.5px solid #C3C1C1;
+	}
+	.itemize {
+		display: inline-block;
+	}
+	.classify {
+		margin: 12px 0px 0px 12px;
+		border-radius: 8px;
+		background: #E6FD00;
+		float: left;
+	}
+	.classify  a {
+		padding: 5px 8px;
+		display: block;
+		border-radius: 8px;
+		box-shadow:  0px 5px 4px #336600;
+	}
+	.classify a:hover {
+		color: rgb(255, 186, 20);
+		background: linear-gradient(145deg, #3aaeff, #3193e6);
+		box-shadow:  none;
+		border-radius: 7px;
+	}
+
+
+}
+
+
+@media screen and (max-width: 959px) {
+
+	/*
+	左半边位置
+	*/
+	.build-left {
+		text-align: justify;
+		box-sizing: border-box;
+		padding: 10px 12px;
+	}
+	hr {
+		clear: both;
+		margin: 15px 0;
+		height: 0px;
+		overflow: hidden;
+		border: none;
+		background: transparent;
+		border-bottom: 4px solid #ddd;
+		padding: 0;
+	}
+	.article .img-max img, .article .img-max-t img  {
+		width: 100%;
+	}
+
+	/*
+	右半边位置
+	*/
+	.build-right {
+		display: none;
+	}
+
+	
+}
+	
+
+
+
+

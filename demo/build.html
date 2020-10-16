@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="../css/nav-PC.css">
+<link rel="stylesheet" href="../css/nav-mobile.css">
+<link rel="stylesheet" href="../css/css.css">
+<link rel="stylesheet" href="../css/build.css">
+<link rel="stylesheet" href="../css/build-auto.css">
+<link rel="stylesheet" href="../css/dark.css">
+<script src="../js/topJS.js" type="text/javascript"></script>
+<title>建站</title>
+</head>
+	<body class="build-index">
+		<div class="header">
+			<div class="logo"><img src="../img/logo.png" alt=""></div>
+			<div class="dropdown" id="dropdown">
+				<div onclick="myFunction()" class="dropbtn"></div>
+				<div id="myDropdown" class="dropdown-content">
+					<div class="nav">		
+						<a href="../index.html"><div class="ul" id="index">主页<div class="nav-line"></div></div></a>
+						<a href="../demo/travel.html"><div class="ul" id="demo1">踏行<div class="nav-line"></div></div></a>
+						<a href="../demo/date.html"><div class="ul" id="demo2">资料<div class="nav-line"></div></div></a>
+						<a href="../demo/build.html"><div class="ul" id="demo3">建站<div class="nav-line"></div></div></a>
+						<a href="../demo/about.html"><div class="ul" id="demo4">关于<div class="nav-line"></div></div></a>
+					</div>
+				</div>
+			</div>	
+		</div>
+		<div class="main">
+			<div class="build-left">
+				<div class="article">
+					<h1>github个人建站+绑定域名教程</h1>
+					<div class="time">发布于2020-02-09</div>
+					<hr>
+					<p class="text">注：github只支持搭建静态网站。（什么是<a href="https://baike.baidu.com/item/%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99/2776875" target="_blank">静态网站</a>）</p>
+					<p class="text">最后写有图片外链教程，为什么需要外链？第一，可以减少图片再次上传的时间。第二，github的访问速度并不是非常快，利用国内的服务器来加载图片，那速度快是肯定的吧。</p>
+					<h2>① github建站</h2>
+					<p class="text">①注册<a href="https://github.com/" target="_blank">github</a>账号</p>
+					<p class="text">②创建仓库</p>
+					<div class="img dark-img"><img class="zooming" src="https://img-blog.csdnimg.cn/2020020900190343.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDAxNjAzMQ==,size_16,color_FFFFFF,t_70" alt="csdn原创"></div>
+					<p class="text">③如果你不需要搭建本地仓库，则点击红框即可</p>
+					<div class="img dark-img"><img class="zooming" src="https://img-blog.csdnimg.cn/20200209002045661.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDAxNjAzMQ==,size_16,color_FFFFFF,t_70" alt="csdn原创"></div>
+					<p class="text">④把你的网页文件拖进去（支持多文件同时拖动，需把主页放在根目录位置，则名称为index.html）</p>
+					<div class="img dark-img"><img class="zooming" src="https://img-blog.csdnimg.cn/20200209002452585.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDAxNjAzMQ==,size_16,color_FFFFFF,t_70" alt="csdn原创"></div>
+					<p class="text">⑥上传完成后，把网页拉到底部，点击提交更改</p>
+					<div class="img-max-t dark-img"><img class="zooming" src="https://img-blog.csdnimg.cn/20200209002648922.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDAxNjAzMQ==,size_16,color_FFFFFF,t_70" alt="csdn原创"></div>
+					<p class="text">此刻你的网页已经上传成功，已经可以在网上浏览。在浏览器搜索栏上输入：你的用户名+github.io。</p>
+					<div class="img-max dark-img"><img class="zooming" src="https://img-blog.csdnimg.cn/20200209003112613.png" alt="csdn原创"></div>
+					<h2>绑定域名</h2>
+					<p class="text">①购买域名</p>
+					<p class="text">②进行域名解析</p>
+					<p class="text">（1）</p>
+					<div class="img dark-img"><img class="zooming" src="https://img-blog.csdnimg.cn/20200209003356884.png" alt="csdn原创"></div>
+					<p class="text">（2）系统默认为你创建好两个文件，你只需要修改IP即可。</p>
+					<div class="img dark-img"><img class="zooming" src="https://img-blog.csdnimg.cn/20200209003422214.png" alt="csdn原创"></div>
+					<p class="text">③获取你github的IP</p>
+					<p class="text">（1）wind+R打开cmd命令提示符</p>
+					<div class="img-max dark-img"><img class="zooming" src="https://img-blog.csdnimg.cn/20200209003720297.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDAxNjAzMQ==,size_16,color_FFFFFF,t_70" alt="csdn原创"></div>
+					<p class="text">（2）把获取到的IP填入上述两处地方即可</p>
+					<div class="img dark-img"><img class="zooming" src="https://img-blog.csdnimg.cn/20200209003744985.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDAxNjAzMQ==,size_16,color_FFFFFF,t_70" alt="csdn原创"></div>
+					<p class="text">到此，你的利用github搭建的网页+绑定域名已完成。网页上的图片建议采用外链的形式（外链使用的服务器是你所外链处的服务器，如QQ空间使用的是腾讯的服务器）。注意：QQ空间相册图片可以外链（直接在图片上鼠标右键，复制图片地址，但是一旦你绑定域名，此方法会失效。）解决方法，在其它网站采用外链。就像我在CSND上发布此篇文章，里面的图片我也可以直接鼠标右键copy图片的地址。</p><br>
+					<p>版权声明：本文为CSDN博主「Simple-csdn」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处<a href="https://blog.csdn.net/weixin_44016031/article/details/104230525">链接</a>及本声明。</p>
+				</div>
+			</div>
+			<div class="build-right">
+				<div class="siderbar">
+					<div class="label"><p>标签</p></div>
+					<div class="label-line"></div>
+					<div class="itemize">
+						<p id="1" class="classify"><a href="">C语言</a></p>
+						<p id="2" class="classify"><a href="">JAVA</a></p>
+						<p id="3" class="classify"><a href="">Python</a></p>
+						<p id="4" class="classify"><a href="../demo/date/304/304001.html">JavaScript</a></p>
+						<p id="5" class="classify"><a href="../demo/date/305/305001.html">数据库</a></p>
+						<p id="other" class="classify"><a href="../demo/date/other/1.html">其余资料</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<button onclick="topFunction()" id="myBtn" title="返回顶部"></button>
+		<script src="../js/zooming.min.js"></script>
+		<script src="../js/bottomJS.js"></script>
+		<footer>
+			<p>Design by Simple</p>
+			<p>本网站依托于github建立，源代码已开源。</p>
+			<p>联系邮箱②：<a target="-blank" href="http://mail.qq.com/cgi-bin/qm-share?t=qm-mailme&email=A3lxe2ZuYmpvQ3Vqcy1yci1gbG4&subject=blog" style="text-decoration:none;">zrxemail@vip.qq.com</a></p>
+		</footer>	
+	</body>
+</html>

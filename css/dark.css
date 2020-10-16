@@ -1,0 +1,140 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*暗黑模式*/
+@media all and (max-width: 501px) and (prefers-color-scheme: dark) {
+	/*
+	全模块（ 通用 ）
+	*/
+	.header {
+		background-color: #343434;
+	}
+	body, #myDropdown, .date-classify-right, .travel-right .article {
+    	background-color: #444;
+    	color: #e4e4e4;
+  	}
+	#myDropdown a {
+		background-color: #343434;
+	}
+	/*给图片添加一层蒙版*/
+  	.dark-img {
+	 	background: #000;
+		padding-bottom: 0px;
+	}
+	img {
+	 	opacity:0.6; 
+		filter: alpha(opacity=60);
+	}
+	
+	#myBtn {
+		opacity:0.6; 
+		filter: alpha(opacity=60);
+	}
+	footer {
+		background: #4C4C4C;
+	}
+	footer p,footer a {
+		color: #9E9E9E;
+	}
+	
+	/*
+	踏行模块
+	*/
+	.travel-left .cityDiv {
+		background: #3E7C00;
+	}
+	.travel-right hr {
+		clear: both;
+	    margin: 15px 0;
+	    height: 0px;
+	    overflow: hidden;
+	    border: none;
+	    background: transparent;
+	    border-bottom: 4px solid #1E212D;
+	    padding: 0;
+	}
+	
+	/*
+	资料模块
+	*/
+	.date-right .line-left, .date-classify-right .line-left {
+		background-color: #8C0000;
+	}
+	.date-right .information {
+		-webkit-filter: brightness(2.3); /* Safari and Chrome */
+		-moz-filter: brightness(2.3);    /* Firefox  */
+		-o-filter: brightness(2.3);      /* Opera */
+		filter: brightness(2.3);
+	}
+	.date-classify-right .article hr {
+	    clear: both;
+	    margin: 15px 0;
+	    height: 0px;
+	    overflow: hidden;
+	    border: none;
+	    background: transparent;
+	    border-bottom: 4px solid #1E212D;
+	    padding: 0;
+	}
+	.date-right .article pre, .date-classify-right .article pre {
+		background: #323232;
+		border: 1px solid #312C2C;
+	}
+	.date-right .article button, .date-classify-right .article button {
+		background: #748835;
+		color: #A90000;
+	}
+	.date-right .date-plate {
+		background-color: #3F3F3F;
+	}
+	/*资料方块*/
+	/*1*/
+	.information1 {
+		background: #846A07;
+	}
+	.information2 {
+		background: #966600;
+	}
+	.information3 {
+		background: #597520;
+	}
+	/*2*/
+	.information4 {
+		background: #680F03;
+	}
+	.information5 {
+		background: #76340D;
+	}
+	.information6 {
+		background: #3D2148;
+	}
+	/*3*/
+	.information7 {
+		background: #104F63;
+	}
+	.information8 {
+		background: #6C0F2C;
+	}
+	.information9 {
+		background: #554404;
+	}
+	
+	/*
+	建站模块
+	*/
+	.build-left hr {
+		clear: both;
+	    margin: 15px 0;
+	    height: 0px;
+	    overflow: hidden;
+	    border: none;
+	    background: transparent;
+	    border-bottom: 4px solid #1E212D;
+	    padding: 0;
+	}
+	
+
+	
+	
+	
+}

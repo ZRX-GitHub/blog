@@ -1,0 +1,76 @@
+@charset "utf-8";
+/* CSS Document */
+* {
+	padding: 0;
+	border: 0;
+	margin: 0;
+	color: black;
+	text-decoration: none;
+	font-size: 17px;
+	font-family: "Microsoft YaHei", Verdana, Geneva, sans-serif;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	outline: none；
+	
+}
+body {
+	background: #f5f6f7;
+	-webkit-overflow-scrolling: touch;
+	scroll-behavior: smooth;
+}
+a {
+	word-wrap: break-word; /* 自动换行 */
+}
+.p-img {
+	padding-top: 10px;
+}
+.img-p {
+	padding-bottom: 6px;
+}
+
+
+html {
+    height: 100%;
+}
+ 
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.header {
+	   flex: 0 0 auto;
+}
+.main {
+	   flex: 1 0 auto;
+}
+footer {
+	width: 100%;
+	min-height: 80px;
+	margin: 0px auto;
+	background: #666;
+	padding-top: 3px;
+	padding-bottom: 10px;
+	text-align: justify;
+	box-sizing: border-box;
+	clear: both;
+	flex: 0 0 auto;
+}
+footer p:first-of-type {
+	margin-top: 5px;
+	text-align: center;
+}
+footer p {
+	margin-top: 5px;
+	text-align: center;
+}
+footer p, footer a {
+	color: #C8C8C8;
+	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+}
+footer a:hover {
+	color: rgb(255,186,20);
+}
+
+
+
+

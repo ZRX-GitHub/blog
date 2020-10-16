@@ -1,0 +1,32 @@
+@charset "utf-8";
+/* CSS Document */
+
+.article a {
+	direction: none;
+	color: blue;
+}
+.article .img img {
+	width: 100%;
+	cursor: pointer;
+}
+.article .img-min img {
+	cursor: pointer;
+}
+.article h1 {
+	font-size: 26px;
+}
+.article h2 {
+	font-size: 20px;
+	padding: 10px 0px;
+}
+.article .time {
+	padding-top: 20px;
+	color: #827D7D;
+}
+.article .text {
+	padding: 0px 0px 6px 0px;
+	line-height: 26px;
+}
+
+
+

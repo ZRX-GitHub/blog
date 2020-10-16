@@ -1,0 +1,213 @@
+@charset "utf-8";
+/* CSS Document */
+
+@media all and (min-width: 960px) {
+
+	#main {
+		width: 88%;
+		margin: 0px auto;
+	}
+	.nav-article {
+		margin-top: 10px;
+	}
+	.nav-article a,.nav-article span {
+		color: #ABAAAA;
+		font-size: 14px;
+		font-family: "SimSun";
+	}
+	.nav-article a:hover {
+		color: rgb(255,186,20);
+	}
+	
+	/*
+	左半边位置
+	*/
+	.date-classify-left {
+		width: 18%;
+		float: left;
+	}
+	.catalog {
+		width: 100%;
+		background: #E5E5E5;
+		margin-top: 10px;
+		border-radius: 5px;
+		float: left;
+		box-shadow: 0px 0px 3px #BCB690;
+	}
+	.catalog p {
+		text-align: center;
+		margin-top: 2px;
+	}
+	.catalog a:hover {
+		color: rgb(255, 186, 20);
+	}
+	.chapter {
+		margin: 5px;
+	}
+	.chapter a {
+		display: block;
+	}
+	.chapterLine {
+		width: 100%;
+		height: 0.1px;
+		background: rgba(145,139,139,1.00);
+	}
+
+	/*
+	右半边位置
+	*/
+	.date-classify-right {
+		width: 76%;
+		background: RGB(239,239,218);
+		border-radius: 5px;
+		margin-top: 10px;
+		margin-bottom: 12px;
+		padding: 12px;
+		float: right;
+		box-shadow: 0px 0px 3px #BCB690;
+	}
+	.skip-top .span-txt:hover, .skip-bottom .span-txt:hover {
+		color: rgb(255, 186, 20);
+	}
+	.skip-top {
+		width: 100%;
+		height: 32px;
+		border-radius: 50px;
+		box-shadow: 0 3px 0 rgba(255,255,255,0.2) inset,0 -1px 0 rgba(0,0,0,.2) inset; 
+		clear: both;
+	}
+	.article h1, .article h2, .article h3, .article h4, .article h5, .article h6, .article h7 {
+		padding: 10px 0px 0px;
+	}
+	.article a:hover {
+		color: rgb(255,186,20);
+	}
+	li {
+		margin-top: 4px;
+	}
+	.skip-bottom {
+		margin-top: 20px;
+		width: 100%;
+		height: 32px;
+		border-radius: 50px;
+		box-shadow: 0 3px 0 rgba(255,255,255,0.2) inset,0 -1px 0 rgba(0,0,0,.2) inset; 
+		clear: both;
+	}
+	.previouPage a {
+		height: 32px;
+		line-height: 32px;
+		display: block;
+		float: left;
+	}
+	.previouPage span {
+		float: right;
+	}
+	.nextPage a {
+		height: 32px;
+		line-height: 32px;
+		display: block;
+		float: right;
+	}
+	.nextPage span {
+		float: left;
+	}
+
+}
+
+@media screen and (max-width: 959px) {
+
+	#main {
+		width: 100%;
+		margin: 0px auto;
+	}
+	.nav-article a,.nav-article span {
+		color: #ABAAAA;
+		font-size: 14px;
+		font-family:"SimSun";
+	}
+	
+
+	/*
+	左半边位置
+	*/
+	.date-classify-left {
+		width: 18%;
+		float: left;
+		display: none;
+	}
+	.catalog {
+		width: 100%;
+		background: gray;
+		margin-top: 30px;
+		border-radius: 5px;
+		float: left;
+	}
+	.catalog p {
+		text-align: center;
+		margin-top: 2px;
+	}
+
+	/*
+	右半边位置
+	*/
+	.date-classify-right {
+		width: 100%;
+		background: RGB(239,239,218);
+		margin: auto;
+		margin-top: 10px;
+		padding: 5px 12px;
+		box-sizing: border-box;
+	}
+	.nav-article {
+		margin-top: 10px;
+		margin-left: 12px;
+	}
+	.nav-article > a,.nav-article > span {
+		color: #ABAAAA;
+		font-size: 14px;
+		font-family:"SimSun";
+	}
+	.skip-top {
+		width: 100%;
+		height: 32px;
+		margin-top: 5px;
+		border-radius: 50px;
+		box-shadow: 0 3px 0 rgba(255,255,255,0.2) inset,0 -1px 0 rgba(0,0,0,.2) inset; 
+		clear: both;
+	}
+	.skip-bottom {
+		width: 100%;
+		height: 32px;
+		margin-top: 20px;
+		margin-bottom: 10px;
+		border-radius: 50px;
+		box-shadow: 0 3px 0 rgba(255,255,255,0.2) inset,0 -1px 0 rgba(0,0,0,.2) inset; 
+		clear: both;
+	}
+	.previouPage > a {
+		height: 32px;
+		line-height: 32px;
+		display: block;
+		float: left;
+	}
+	.previouPage span {
+		float: right;
+	}
+	.previouPage:hover {
+		opacity: 0.5;
+	}
+	.nextPage > a {
+		height: 32px;
+		line-height: 32px;
+		display: block;
+		float: right;
+	}
+	.nextPage span {
+		float: left;
+	}
+	.nextPage:hover {
+		opacity: 0.5;
+	}
+
+
+}

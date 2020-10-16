@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>关系代数</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel="shortcut icon" href="../../../img/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="../../../css/nav-auto.css">
+<link rel="stylesheet" href="../../../css/css.css">
+<link rel="stylesheet" href="../../../css/markdownpad-github.css">
+<link rel="stylesheet" href="../../../css/date-classify-auto.css">
+<link rel="stylesheet" href="../../../css/dark.css">
+<script src="../../../js/topJS.js" type="text/javascript"></script>
+</head>
+	<body class="date-index">
+		<div class="header">
+			<div class="logo"><img src="../../../img/logo.png" alt=""></div>
+			<div class="dropdown" id="dropdown">
+				<div onclick="myFunction()" class="dropbtn"></div>
+				<div id="myDropdown" class="dropdown-content">
+					<div class="nav">		
+						<div class="ul" id="index"><a href="../../../index.html">主页</a><div class="nav-line"></div></div>
+						<div class="ul" id="demo1"><a href="../../../demo/travel_index.html">踏行</a><div class="nav-line"></div></div>
+						<div class="ul" id="demo2"><a href="../../../demo/date.html">资料</a><div class="nav-line"></div></div>
+						<div class="ul" id="demo3"><a href="../../../demo/build.html">建站</a><div class="nav-line"></div></div>
+						<div class="ul" id="demo4"><a href="../../../demo/about.html">关于</a><div class="nav-line"></div></div>
+					</div>
+				</div>
+			</div>	
+		</div>
+		<div id="main">
+			<div class="nav-article">
+				<span>当前所在位置：</span>
+				<a href="../../../demo/date.html">资料</a>
+				<span> &gt </span>
+				<a href="../305/305001.html">数据库</a>
+				<span> &gt</span>
+				<a href="../305/305002.html">简介</a>
+			</div>
+			<div class="date-classify-left">
+				<div class="catalog"><p>目录</p>
+					<div class="chapter"><a href="../304/304001.html">简介</a></div> 
+					<div class="chapter"><a href="../304/304002.html">关系代数</a></div> 
+					<div class="chapter" id="chapter-none"></div> 	
+				</div>
+			</div>
+			<div class="date-classify-right">
+				
+				<div class="skip-top">
+					<div class="previouPage"><a href="../305/305001.html"> <img class="img-l" src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-left.png" alt="左箭头"> <span class="span-txt">简介</span></a></div>
+					
+				</div>
+				
+				<div class="article">                                                                                                                         <!-- ↓  博客输入  ↓ -->                                                                                                                                                                             
+					
+					<h1>关系代数</h1>
+					<p>2020/3/2 6:47:30 <br>
+					运算三要素：运算对象、运算符、运算结果。<br>
+					运算符：集合运算符、关系运算符、比较运算符、逻辑运算符。<br></p>
+					<ul>
+					<li>集合运算符：针对集合可执行的操作。（并运算“∪”、交运算“∩”、差运算“-”、笛卡儿积运算“X”）</li>
+					<li>
+					<p>关系运算符：专门针对关系或表格进行的操作。（投影运算“π”、选择运算“σ”、连接运算“⋈”、除运算“÷”）<br></p>
+					<p>连接运算：</p>
+					<ul>
+					<li>θ连接：从R和S的笛卡儿乘积中,找出R在属性组A上的值与S在属性组B上的值满足θ关系的所有元祖。</li>
+					<li>自然连接：是一种特殊的等值连接，比较两个关系中分量相同的属性组，并且在结果中把重复的属性列去掉，最后只保留属性组中分量相同的元组。</li>
+					<li>
+					外连接：左连接+右连接。
+					<ul>
+					<li>左连接：在自然连接的基础上加上左边表上不包含自然连接中所含元组（行）的元组。</li>
+					<li>右连接：在自然连接的基础上加上右边表上不包含自然连接中所含元组（行）的元组。</li>
+					</ul>
+					</li>
+					</ul>
+					</li>
+					</ul>
+					<h5>并运算“∪”、交运算“∩”、差运算“-”</h5>
+					<p>R，一月份</p>
+					<p><img src="https://img-blog.csdnimg.cn/2020030206023197.png" alt="在这里插入图片描述" /></p>
+					<p>S，二月份</p>
+					<p><img src="https://img-blog.csdnimg.cn/20200302060250681.png" alt="在这里插入图片描述" /></p>
+					<h6>并运算</h6>
+					<p>T=R∪S，一月份并二月份</p>
+					<p><img src="https://img-blog.csdnimg.cn/20200302060209369.png" alt="在这里插入图片描述" /></p>
+					<h6>交运算</h6>
+					<p>T=R∩S，一月份交二月份</p>
+					<p><img src="https://img-blog.csdnimg.cn/20200302060326609.png" alt="在这里插入图片描述" /></p>
+					<h6>差运算</h6>
+					<p>T=R-S，一月份差二月份</p>
+					<p><img src="https://img-blog.csdnimg.cn/20200302060351926.png" alt="在这里插入图片描述" /></p>
+					<h5>笛卡儿积运算“X”</h5>
+					<p>R</p>
+					<p><img src="https://img-blog.csdnimg.cn/20200302060629753.png" alt="在这里插入图片描述" /></p>
+					<p>S</p>
+					<p><img src="https://img-blog.csdnimg.cn/20200302060639726.png" alt="在这里插入图片描述" /></p>
+					<p>T=RXS</p>
+					<p><img src="https://img-blog.csdnimg.cn/2020030206065743.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDAxNjAzMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
+					<h5>投影运算“π”</h5>
+					<p>把行中的元素取出，表达式：π<sub>A</sub>（R），其中A为R中的属性列。</p>
+					<p>R</p>
+					<p><img src="https://img-blog.csdnimg.cn/20200302060916761.png" alt="在这里插入图片描述" /></p>
+					<p>↓ ↓ ↓ 公式：π<sub>学号，姓名</sub>（R），其中 <strong>学号，姓名</strong> 为R中的属性列。</p>
+					<p><img src="https://img-blog.csdnimg.cn/20200302061031447.png" alt="在这里插入图片描述" /></p>
+					<h5>选择运算“σ”</h5>
+					<p>把行中的元素取出，表达式：σ<sub>F</sub>（R），其中F表示选择条件。</p>
+					<p>R</p>
+					<p><img src="https://img-blog.csdnimg.cn/20200302061846597.png" alt="在这里插入图片描述" /></p>
+					<p>↓ ↓ ↓ 公式：σ<sub>信息=男</sub>(R），其中 <strong>信息=男</strong> 表示选择条件。</p>
+					<p><img src="https://img-blog.csdnimg.cn/2020030206193354.png" alt="在这里插入图片描述" /></p>
+					<h5>连接运算“⋈”</h5>
+					<h6>θ运算</h6>
+					<p>θ = { &lt; , = , &gt; }</p>
+					<p>R</p>
+					<p><img src="https://img-blog.csdnimg.cn/20200302062223387.png" alt="在这里插入图片描述" /></p>
+					<p>S</p>
+					<p><img src="https://img-blog.csdnimg.cn/20200302062231423.png" alt="在这里插入图片描述" /></p>
+					<p>θ为&lt;，R<sup>⋈</sup><sub>A&lt;B</sub>S，其中⋈为上标、A&lt;B为下标。</p>
+					<p><img src="https://img-blog.csdnimg.cn/20200302062359578.png" alt="在这里插入图片描述" /></p>
+					<p>θ为=，R<sup>⋈</sup><sub>A=B</sub>S，其中⋈为上标、A=B为下标。</p>
+					<p><img src="https://img-blog.csdnimg.cn/20200302062723267.png" alt="在这里插入图片描述" /></p>
+					<p>θ为&gt;，R<sup>⋈</sup><sub>A&gt;B</sub>S，其中⋈为上标、A&gt;B为下标。</p>
+					<p><img src="https://img-blog.csdnimg.cn/20200302062728450.png" alt="在这里插入图片描述" /></p>
+					<h6>自然运算</h6>
+					<p>R</p>
+					<p><img src="https://img-blog.csdnimg.cn/20200302062903901.png" alt="在这里插入图片描述" /></p>
+					<p>S</p>
+					<p><img src="https://img-blog.csdnimg.cn/20200302062911747.png" alt="在这里插入图片描述" /></p>
+					<p>T=R ⋈ S</p>
+					<p><img src="https://img-blog.csdnimg.cn/2020030206292567.png" alt="在这里插入图片描述" /></p>
+					<h6>外连接</h6>
+					<p>R</p>
+					<p><img src="https://img-blog.csdnimg.cn/20200302063009152.png" alt="在这里插入图片描述" /></p>
+					<p>S</p>
+					<p><img src="https://img-blog.csdnimg.cn/20200302063018529.png" alt="在这里插入图片描述" /></p>
+					<p>左连接,T=R ⋊ S</p>
+					<p><img src="https://img-blog.csdnimg.cn/20200302063104656.png" alt="在这里插入图片描述" /></p>
+					<p>右连接,T=R ⋉ S</p>
+					<p><img src="https://img-blog.csdnimg.cn/20200302063122118.png" alt="在这里插入图片描述" /></p>
+					<p>外连接,T=R ⋈ S</p>
+					<p><img src="https://img-blog.csdnimg.cn/20200302063144249.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDAxNjAzMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
+					<h5>除运算“÷”</h5>
+					<p>T为R÷S的商</p>
+					<p>R</p>
+					<p><img src="https://img-blog.csdnimg.cn/20200302063300512.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDAxNjAzMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
+					<p>S</p>
+					<p><img src="https://img-blog.csdnimg.cn/20200302063308505.png" alt="在这里插入图片描述" /></p>
+					<p>T=R÷S</p>
+					<p><img src="https://img-blog.csdnimg.cn/20200302063316287.png" alt="在这里插入图片描述" /></p>
+					
+					<p class="copyright-notice">版权声明：本文为CSDN博主「Simple-csdn」的原创文章，遵循<a href="https://creativecommons.org/licenses/by-sa/4.0/?__cf_chl_captcha_tk__=d714564d23d36025067035ea8eb72dca876e2142-1584676810-0-AZIWKK0Zts-vVQF5E9JGumoKaxQNI3ThJWnE-6p7I2cV9Ub3XZli6ZV5aUKeY-tTIBs_UYOiL8g49YaP9wErrF51UckOEefZX8Z__BhWvQ77hb_S-7OPRbtkRjH5JrkNpZCzerKmCsgJ3Y5IMTLLxTgq_sX8ayLXgeCudaDiQpFSrri78P5ZLN4BhJjs0sTJgcVuwLUmJ8b8R7zxYmW-5kj0IaL6LrsaMmxVC0n9WM6ERjp8b9WOFSIe6pKCUe-Px2WBLQ1EITL_WYx9s050C21YfCAOvFT6wJPMvL_I0ns_4B_JE1oUIzpp--sv2IoOsHMpW3NSvbZCMCxeQU7SuAXRcYtaFNDBYkLwUbsOqAPVhixDnnL0BwbBES8H8CdeUN7ux4dAMIuj6n8tVPfCFPA" target="_blank"> CC 4.0 BY-SA</a>  版权协议，转载请附上原文出处链接及本声明。</p>
+					<p class="copyright-notice">本文链接:<a href="https://blog.csdn.net/weixin_44016031/article/details/104604510" target="_blank">https://blog.csdn.net/weixin_44016031/article/details/104974352</a></p>
+					
+				<!-- ↑  博客输入  ↑ -->	
+				</div>
+				
+				<div class="skip-bottom">
+					<div class="previouPage"><a href="../305/305001.html"> <img class="img-l" src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-left.png" alt="左箭头"> <span class="span-txt">简介</span></a></div>
+				</div>
+				
+			</div>
+		</div>
+		<button onclick="topFunction()" id="myBtn" title="返回顶部"></button>
+		<script src="../../../js/zooming.min.js"></script>
+		<script src="../../../js/bottomJS.js"></script>
+	</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

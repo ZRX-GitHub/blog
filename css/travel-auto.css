@@ -1,0 +1,125 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+@media screen and (min-width: 960px) {
+
+	.main {
+		width: 100%;
+	}
+	.article {
+		width: 850px;
+		margin: 0 auto;
+		margin-top: 5px;
+		text-align: justify;
+		padding: 12px;
+		border-radius: 5px;
+		background: #ffffff;
+		margin-bottom: 12px;
+		box-shadow: 0px 0px 3px #8D8D8D;
+	}
+	.rticle-location p {
+		font-size: 30px;
+		padding-bottom: 10px;
+		font-weight: bold;
+	}
+	.article-img img {
+		width: 100%;
+	}
+	.article-text {
+		width: 100%;
+		padding: 10px inherit;
+		text-indent: 2rem;
+		text-align: justify;
+	}
+	.rememberBlock {
+		width: 850px;
+		display: inline-block;
+	}
+	.rememberBlock-l {
+		width: 422.5px;
+		margin-top: 5px;
+		float: left;
+	}
+	.rememberBlock-r {
+		width: 422.5px;
+		margin-top: 5px;	
+		float: right;
+	}
+	.rememberBlock-l img {
+		width: 100%;
+		height: 100%;
+		float: left;
+	}
+	.rememberBlock-r img {
+		width: 100%;
+		height: 100%;
+		float: right;
+	}
+
+}
+
+
+@media all and (max-width: 959px) {
+
+	.main {
+		width: 100%;
+		margin: 0px auto;
+	}
+	.article {
+		width: 100%;
+		margin: 0 auto;
+		margin-top: 5px;
+		text-align: justify;
+		padding: 0px 12px;
+		background: #ffffff;
+		box-sizing: border-box;
+	}
+	.article-location p {
+		font-size: 30px;
+		padding-bottom: 10px;
+		font-weight: bold;
+	}
+	.article-img img {
+		width: 100%;
+	}
+	.article-text {
+		width: 100%;
+		padding: 0px 0px 6px 0px;
+		line-height: 26px;
+		text-indent: 2rem;
+		text-align: justify;
+	}
+	.article-text p:last-child {
+		padding-bottom: 10px;
+	}
+	.rememberBlock {
+		width: 100%;
+		display: inline-block;
+	}
+	.rememberBlock-l {
+		width: 49.5%;
+		height: 60%;
+		margin-top: 1%;
+		float: left;
+		clear: both;
+	}
+	.rememberBlock-r {
+		width: 49.5%;
+		height: 60%;
+		margin-top: 1%;	
+		float: right;
+	}
+	.rememberBlock-l img {
+		width: 100%;
+		height: 100%;
+		float: left;
+	}
+	.rememberBlock-r img {
+		width: 100%;
+		height: 100%;
+		float: right;
+	}
+
+
+}
