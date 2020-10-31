@@ -55,6 +55,21 @@
 	body.about-index .nav #demo4 .nav-line {
 		border-bottom: 4px solid #F40505;
 	}
+	.old-blog {
+/*
+		line-height: 46px;
+		color: #959595;
+		cursor: default;
+*/
+/*
+		margin-right: 20px;
+		float: right;
+*/
+		position: absolute;
+		top: 0;
+		left: 70%;
+	}
+	
 	/*返回顶部按钮*/
 	#myBtn {
 		width: 32px;
@@ -151,9 +166,15 @@
 		background-color: #C1C1C1;
 	}
 	.show {
-		display:block;
+		display: block;
 	}
-
+	.old-blog {
+		position: absolute;
+		top: 0;
+		right: 100%;
+		width: 116px;
+	}
+	
 	/*
 	返回顶部按钮
 	*/
