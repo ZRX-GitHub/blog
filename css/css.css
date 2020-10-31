@@ -40,6 +40,12 @@ body {
 .header {
 	   flex: 0 0 auto;
 }
+.old-blog {
+	line-height: 46px;
+	color: #959595;
+	cursor: default;
+}
+
 .main {
 	   flex: 1 0 auto;
 }
