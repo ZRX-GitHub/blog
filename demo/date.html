@@ -211,24 +211,45 @@
 							<a href="date/305/305001.html"><span class="informations-title">数据表的增删改命令</span>
 								<div class="date-plate-informations-line"></div>
 								<div class="informations-div-text">
-									<p class="informations-text-sketch">1</p>
+									<p class="informations-text-sketch">/*
+create table table_name ( 参数 ) ： 参数和参数之间使用 逗号隔开
+参数： 列名 类型
+*/
+-- 创建一个用户表： id ( 主键：唯一非空 ) 、account 、password 、create_time 、height 、phone</p>
 								</div>
 							</a>
 						</div>
 						<div class="information2 informations">
-							<a href="date/305/305002.html"><span class="informations-title">关系代数</span>
+							<a href="date/305/305002.html"><span class="informations-title">常用命令</span>
 								<div class="date-plate-informations-line"></div>
 								<div class="informations-div-text">
-									<p class="informations-text-sketch">运算三要素：运算对象、运算符、运算结果。
-运算符：集合运算符、关系运算符、比较运算符、逻辑运算符。</p>
+									<p class="informations-text-sketch">简单的查询预计：--查询当前用户下的所以对象（表）
+select * from tab;
+-- 查询员工表的所有信息  * 表示表中的所以数据，单独查询用 逗号隔开
+select * from emp;
+-- 查询表中的个别类型的数据
+select ename,sal from emp;</p>
 								</div>
 							</a>
 						</div>
 						<div class="information3 informations">
-							<a href=""><span class="informations-title"></span>
+							<a href=""><span class="informations-title">多表查询</span>
 								<div class="date-plate-informations-line"></div>
 								<div class="informations-div-text">
-									<p class="informations-text-sketch">3</p>
+									<p class="informations-text-sketch">多表查询：-- 笛卡尔积、子查询、连接查询（内连、满外连、左连、右连）
+
+-- 笛卡尔积 --
+--比较简单、性能比较差，因为先会做排列组然后再进行条件过滤
+select * from emp;
+select * from dept;
+
+-- 查询所有的员工信息包含部门信息
+select e.*, d.* from emp e, dept d where e.deptno = d.deptno;
+
+
+-- 子查询 --
+-- 实际开发的时候永远不要用 &quot; * &quot; 
+select e.* ,（select d.dname from dept d where d.deptno = e.deptno）as dname from emp e;</p>
 								</div>
 							</a>
 						</div>
