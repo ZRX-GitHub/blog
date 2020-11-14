@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>多表查询</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel="shortcut icon" href="../../../img/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="../../../css/nav-auto.css">
+<link rel="stylesheet" href="../../../css/css.css">
+<link rel="stylesheet" href="../../../css/markdownpad-github.css">
+<!--<link rel="stylesheet" href="/css/qqqqqqqqqqqqqqqqqqqq.css">-->
+<link rel="stylesheet" href="../../../css/date-classify-auto.css">
+<link rel="stylesheet" href="../../../css/dark.css">
+<script src="../../../js/topJS.js" type="text/javascript"></script>
+</head>
+	<body class="date-index">
+		<div class="header">
+			<div class="logo"><img src="../../../img/logo.png" alt=""></div>
+			<div class="dropdown" id="dropdown">
+				<div onclick="myFunction()" class="dropbtn"></div>
+				<div id="myDropdown" class="dropdown-content">
+					<div class="nav">		
+						<a href="../../../index.html"><div class="ul" id="index">主页<div class="nav-line"></div></div></a>
+						<a href="../../travel.html"><div class="ul" id="demo1">踏行<div class="nav-line"></div></div></a>
+						<a href="../../date.html"><div class="ul" id="demo2">资料<div class="nav-line"></div></div></a>
+						<a href="../../build.html"><div class="ul" id="demo3">建站<div class="nav-line"></div></div></a>
+						<a href="../../about.html"><div class="ul" id="demo4">关于<div class="nav-line"></div></div></a>
+					</div>
+				</div>
+			</div>	
+		</div>
+		<div id="main">
+			<div class="nav-article">
+				<span>当前所在位置：</span>
+				<a href="../../../demo/date.html">资料</a>
+				<span> &gt </span>
+				<a href="../305/305001.html">Oracle</a>
+				<span> &gt</span>
+				<a href="../305/305002.html">多表查询</a>
+			</div>
+			<div class="date-classify-left">
+				<div class="catalog"><p>目录</p>
+					<div class="chapter"><a href="../305/305001.html">数据表的增删改命令</a></div> 
+					<div class="chapterLine"></div>
+					<div class="chapter"><a href="../305/305002.html">常用命令</a></div> 
+					<div class="chapterLine"></div>
+					<div class="chapter"><a href="../305/305003.html">多表查询</a></div> 		
+				</div>
+			</div>
+			<div class="date-classify-right">
+				
+				<div class="skip-top">
+					<div class="previouPage"><a href="../305/305002.html"> <img class="img-l" src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-left.png" alt="左箭头"> <span class="span-txt">常用命令</span></a></div>
+					<div class="nextPage"><a href="../305/305004.html"><span class="span-txt">xxx</span> <img src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-right.png" alt="右箭头"> </a></div>
+				</div>
+				
+				<div class="article">
+				<!-- ↓  博客输入  ↓ -->
+					
+						
+<h1>多表查询</h1>
+<pre><code class="language-sql" lang="sql">-- 笛卡尔积、子查询、连接查询（内连、满外连、左连、右连）
+
+-- 笛卡尔积 --
+--比较简单、性能比较差，因为先会做排列组然后再进行条件过滤
+select * from emp;
+select * from dept;
+
+-- 查询所有的员工信息包含部门信息
+select e.*, d.* from emp e, dept d where e.deptno = d.deptno;
+
+
+-- 子查询 --
+-- 实际开发的时候永远不要用 &quot; * &quot; 
+select e.* ,（select d.dname from dept d where d.deptno = e.deptno）as dname from emp e;
+</code></pre>
+<p>&nbsp;</p>
+<h2>内连接</h2>
+<pre><code class="language-sql" lang="sql">-- 匹配连接
+-- inner join ，where 用 on 代替
+select * from emp e 
+inner join dept d on e.deptno = d.deptno;
+
+-- 左连接 ( 使用最多 ) --
+-- left  join
+-- 以左表为基准进行连接右表
+select * from emp e 
+left  join dept d on e.deptno = d.deptno;
+
+-- 右连接 --
+-- right  join
+-- 以右表为基准进行连接左表
+select * from emp e 
+right  join dept d on e.deptno = d.deptno;
+
+-- 满外连 --
+-- 两表进行合并
+select * from emp e 
+full outer join dept d on e.deptno = d.deptno;
+</code></pre>
+<p>&nbsp;</p>
+<h2>集合操作</h2>
+<pre><code class="language-sql" lang="sql">/*
+· UNION ：并集，所有的内容都查询，重复的显示一次
+· UNION ALL ：并集，所有的内容都显示，包括重复的
+· INTERSECT ：交集：只显示重复的
+· MINUS ：差集：只显示对方没有的（跟顺序是有关系的）
+*/
+-- 查询 10 和 20 的部门员工
+select * from( (select * from emp where deptno=10) union (select * from emp where deptno=20)) order by deptno;  -- 性能比下列要高
+select * from emp where deptno in(10, 20);  -- 性能差
+</code></pre>
+<p>&nbsp;</p>
+<h2>子查询</h2>
+<pre><code class="language-sql" lang="sql">-- 子查询返回空的情况： 主查询也不会返回任何结果
+-- 找出比 8888 员工工资高的人
+select * from emp where sal &gt; (select sal from emp where empno=8888);  -- 不存在的情况
+select * from emp where sal &gt; (select sal from emp where empno = 7566);  --存在的情况
+
+select * from emp where sal in (select avg(sal) from emp group by deptno);  -- in ：如果相等，则返回结果 ，则空
+select * from emp where sal &gt; any(select avg(sal) from emp group by deptno);   -- any ：如果大于最小值，则返回结果 ，则空
+select * from emp where sal &gt; all(select avg(sal) from emp group by deptno);  -- all ：如果大于最大值，则返回结果 ，则空
+</code></pre>
+<p>&nbsp;</p>
+<h2>伪列</h2>
+<pre><code class="language-sql" lang="sql">-- rownum （序号，可变的，必须从1 开始，不可以跳过），rowid （物理地址）
+select e.*, rownum, rowid from emp e;  -- rownum 、rowid 产生
+select e.*, rownum, rowid from emp e order by deptno;   -- rownum 排序发生改变，rowid 不变
+select e.* 
+
+
+-- 伪列，必须从1 开始
+select e.*, rownum, rowid from emp e where rownum =1; 
+select e.*, rownum, rowid from emp e where rownum =2;   -- 不从 1 开始，则返回空值
+select e.*, rn from emp e where (select e.*, rownum rn , rowid from emp e order by deptno) order by rn;
+</code></pre>
+<p>&nbsp;</p>
+<h2>exsits 和 not exsits</h2>
+<p>exists()：表示其内子查询语句返回结果不为空，说明where条件成立就会执行主sql语句。如果为空就表示where条件不成立，sql语句就不会执行。</p>
+<p>not exsits()：和exists相反，子查询语句结果为空，则表示where条件成立，执行sql语句。</p>
+<p>PS：如果子查询得出的结果集记录较少，主查询中的表较大且又有索引时应该用 in,
+-- 反之如果外层的主查询记录较少，子查询中的表大，又有索引时使用 exists。</p>
+<p><strong>找出 和 CLARK SMITH 在同一部门的员工</strong></p>
+<pre><code class="language-sql" lang="sql">-- 1. select * from emp 
+-- 2. 在父查询中嵌套了一个条件
+select * from emp a where exists
+(
+select deptno from emp b 
+where  (b.ename = &#39;CLARK&#39; or b.ename = &#39;SMITH&#39;) and a.deptno = b.deptno
+)
+</code></pre>
+<p>和不使用 exsits() 的对比</p>
+<pre><code class="language-sql" lang="sql">-- 1. select deptno from emp where ename = &#39;CLARK&#39; or ename = &#39;SMITH&#39;
+-- 2. where deptno in 
+select * from emp where deptno in 
+(select deptno from emp where ename = &#39;CLARK&#39; or ename = &#39;SMITH&#39;);
+</code></pre>
+<p>&nbsp;</p>
+<h2>-- 练习 --</h2>
+<pre><code class="language-sql" lang="sql">select * from emp order by deptno;
+-- 列出员工表中每个部门的员工数，和部门 no
+select deptno, count(ename)  from emp group by deptno;
+
+-- 列出员工表中每个部门的员工数（员工数必须大于 3 ），和部门名称
+select b.deptno, count(ename) as number_  from emp b group by b.deptno;  -- 部门的员工数（员工数必须大于 3 ）
+select a.deptno from (select b.deptno, count(ename) as number_  from emp b group by b.deptno) a where a.number_ &gt; 3;  -- 结果
+
+-- 找出工资比 JONES 多的员工
+select * from emp b where ename=&#39;JONES&#39;;  -- JONES 的工资
+select * from emp a where sal &gt; (select sal from emp b where ename=&#39;JONES&#39;);  -- 结果
+
+-- 列出所有员工的姓名和其上级的姓名
+select * from emp a left join emp b on a.mgr = b.empno;
+
+-- 以职位分组，找出平均工资最高的两种职位
+select job,avg(sal) from emp b group by job; 
+select * from  (select job,avg(sal) as sal from emp c group by job) b order by b.sal desc;
+select a.* ,rownum from (select * from  (select job,avg(sal) as sal from emp c group by job) b order by b.sal desc) a where rownum &lt;3 ;  -- 结果
+
+-- 查找出不在部门 20 ，且比部门 20 中任何一个人工资都高的员工姓名、部门名称
+select ename, deptno, sal from emp a where deptno != 20;
+select * from emp b where (sal &gt; (select max(sal) from emp a  where deptno =20) and b.deptno != 20 );  -- 结果
+
+-- 得到平均工资大于 2000 的工作职种 
+select job, avg(sal) as sal from emp a group by job having  avg(sal) &gt; 2000;
+
+-- 分部门得到工资大于 2000 的所有员工的平均工资，并且平均工资还要大于 2500
+ select deptno, avg(sal) as sal from emp  group by deptno having  avg(sal) &gt; 2500;
+
+-- 得到每个月工资总数最少的那个部门的部门编号，部门名称，部门位置
+select b. *,rownum from  (select * from emp a order by sal ) b left join dept d on b.deptno = d.deptno where rownum = 1;
+
+-- 分部门得到平均工资等级为 3 级（等级表）的部门编号
+select * from salgrade;
+select deptno,avg(sal) as sal from emp group by deptno;
+select * from (select deptno,avg(sal) as sal from emp group by deptno) a left join salgrade s on a.sal &gt;s.losal and a.sal &lt;s.hisal where s.grade = 3;  -- 结果
+
+-- 查找出部门 10 和部门 20 中，工资最高第 3 名到工资第 5 名的员工的员工名字，部门名字，部门位置
+select * from emp where deptno in(10, 20) order by sal 
+select a.*, rownum  rn from (select * from emp where deptno in(10, 20) order by sal ) a where rownum &lt;6;
+select b.* from (select a.*, rownum  rn from (select * from emp where deptno in(10, 20) order by sal ) a where rownum &lt;6) b where rn&gt;= 3;  -- 结果
+
+-- 查找出收入（工资加上奖金），下级比自己上级还高的员工编号，员工名字，员工收入。 on a.mgr = b.empno ：找出员工的上级
+select a.*, (sal + nvl(comm, 0)) as total_a from emp a; -- 员工表
+select b.*, (sal + nvl(comm, 0)) as total_b from emp b; -- 上级表
+
+select * from 
+((select empno,ename,mgr,(sal+nvl(comm,0)) as total_a from emp) a)
+left join 
+((select empno,ename,mgr,(sal+nvl(comm,0)) as total_b from emp) b)
+on a.mgr = b.empno
+where a.total_a &gt; b.total_b;
+
+-- 查找出工资等级不为 4 级的员工的员工名字，部门名字，部门位置
+select * from salgrade;
+
+select * from emp a
+left join
+salgrade s on a.sal &gt; s.losal and a.sal &lt; s.hisal
+left join
+dept d on a.deptno = d.deptno
+where s.grade !=4;
+</code></pre>
+<p>&nbsp;</p>
+<h2>-- 加菜 ( 周作业 ) --</h2>
+<pre><code class="language-sql" lang="sql">-- 员工表
+select * from emp a 
+full outer join 
+(select d.*, deptno as deptno_d from dept d) d2 on a.deptno = d2.deptno_d;
+
+-- 查找出不属于任何部门的员工
+select * from emp a where a.deptno is null ;
+
+select * from 
+(select * from emp a full outer join (select d.*, deptno as deptno_d from dept d) d2 on a.deptno = d2.deptno_d) al 
+where al.deptno_d  is null ;  -- 结果
+
+-- 按部门统计员工数，查出员工数最多的部门的第二名到第五名（列出部门名字，部门位置）
+-- a 、b 表获取对应部门里的员工人数，并按降序排列；c 表获取前 六 名员工；d 表为所得结果
+select deptno,count(ename) from emp group by deptno;  -- 部门的员工人数
+
+select d.* from
+(select c.*, rownum as rn from 
+(select * from 
+emp a
+inner join 
+(select deptno, count(ename) as max_en from emp  group by deptno) b
+on a.deptno = b.deptno order by a.deptno desc)  c
+where rownum &lt;6) d where rn &gt;1  -- 结果
+
+-- 查询出 king 所在部门的部门号 \ 部门名称 \ 部门人数 
+-- 使用匹配连接会更好？不，左连比匹配连接性能要更好。所以，具体使用，要看情况！
+select deptno,count(ename) from emp group by deptno having deptno = 10;  --  10 部门的员工人数
+
+select * from
+(select * from emp where ename = upper(&#39;king&#39;)) a
+left  join
+(select deptno, count(ename) as count_e from emp group by deptno ) c
+on a.deptno = c.deptno;  -- 结果
+
+-- 查询出 king 所在部门的工作年限最大的员工名字
+select * from emp a inner join (select * from emp  where ename = upper(&#39;king&#39;)) b on a.deptno = b.deptno order by a.hiredate desc； -- king 所在的部门 
+
+select c.*,months_between(sysdate, c.e_hiredate) / 12 as work_year , rownum from 
+(select a.ename, a.hiredate as e_hiredate from
+emp a
+inner join
+(select * from emp  where ename = upper(&#39;king&#39;)) b
+on a.deptno = b.deptno order by a.hiredate desc) c where rownum = 1;  -- 结果
+
+-- 查询出工资成本最高的部门的部门号和部门名称
+select * from emp order by sal desc;  -- 工资降序排列
+
+select dname, loc, rownum as rn from
+(( select * from emp order by sal desc ) a
+inner join
+dept b
+on a.deptno = b.deptno ) where rownum = 1 ;  -- 结果
+
+
+/*
+Table: （员工tb_emp ）
+id name
+1 a
+2 b
+3 c
+4 d
+Table:( 性别 tb_sex )
+id sex
+1 男
+4 女
+5 男
+找出忘记填写性别的员工（用 Oracle 的两种方式）
+*/
+-- Table: （员工tb_emp ）
+create table tb_emp (
+       id int primary key,
+       nema varchar(1)
+);
+commit;
+
+insert into tb_emp values (1, &#39;a&#39;);
+insert into tb_emp values (2, &#39;b&#39;);
+insert into tb_emp values (3, &#39;c&#39;);
+insert into tb_emp values (4, &#39;d&#39;);
+commit;
+
+select * from tb_emp;
+
+-- Table:( 性别 tb_sex )
+create table tb_sex (
+       id int primary key,
+       sex varchar(1)
+);
+commit;
+
+-- 一个汉字 占 3 ，需要修改表格
+alter table tb_sex modify sex varchar(4);
+commit;
+
+insert into tb_sex values (1, &#39;男&#39;);
+insert into tb_sex values (4, &#39;女&#39;);
+insert into tb_sex values (5, &#39;男&#39;);
+commit;
+
+select * from tb_sex;
+
+select * from tb_emp a
+full outer join 
+tb_sex b on a.id = b.id 
+where (a.id is not null) and  (b.sex is null) ;  -- 结果
+
+
+/*
+表一(AAA)
+商品名称 mc 商品总量 sl
+A 100
+B 120
+表二(BBB)
+商品名称 mc 出库数量 sl
+A 10
+A 20
+B 10
+B 20
+B 30
+用一条 Transact-SQL 语句算出商品 A,B 目前还剩多少？
+先分组在并集在分组
+*/
+-- 表一(AAA)
+create table AAA (
+       id int primary key,
+       mc varchar(4),
+       sl int
+);
+commit;
+
+insert into AAA values (1, &#39;A&#39;, 100 );
+insert into AAA values (2, &#39;B&#39;, 120 );
+commit;
+
+select * from AAA;
+
+-- 表二(BBB)
+create table BBB (
+       id int primary key,
+       mc varchar(4),
+       sl int
+);
+commit;
+
+insert into BBB values (1, &#39;A&#39;, 10 );
+insert into BBB values (2, &#39;A&#39;, 20 );
+insert into BBB values (3, &#39;B&#39;, 10 );
+insert into BBB values (4, &#39;B&#39;, 20 );
+insert into BBB values (5, &#39;B&#39;, 30 );
+commit;
+
+select * from BBB;
+
+select c.*, (sl-sl_b) as stock from 
+(select * from aaa a
+left join
+(select mc as mc_b, sum(sl) as sl_b from bbb group by mc) b 
+on a.mc = b.mc_b) c ;  -- 结果
+
+
+/*
+四张表
+学生表 student （ sid,sname ) ，
+教师表 teacher(tid,tname ) ，
+课程表 course(cid,cname ， ctype) ，
+选课表 choose_course(ccid,sid,tid,cid)
+
+insert into student values(1,&#39;小明 &#39;);
+insert into student values(2,&#39;小花 &#39;);
+
+insert into teacher values(1,&#39;陈红 &#39;);
+insert into teacher values(2,&#39;陈白 &#39;);
+
+insert into course values(1,&#39;语文 &#39; ,&#39;文科 &#39;);
+insert into course values(2,&#39;数学&#39;  ,&#39;理科 &#39;);
+
+--小明选了陈红老师的语文
+insert into choose_course values(1,1,1,1);
+--小明选了陈红老师的数学
+insert into choose_course values(2,1,1,2);
+--小花选了陈红老师的数学
+insert into choose_course values(3,2,1,2);
+--小明选了陈白老师的语文
+insert into choose_course values(4,1,2,1);
+--小花选了陈红老师的语文
+insert into choose_course values(5,2,1,1);
+
+1.查找陈红老师教的学生是那些？
+2.找学生小明所有的文科老师？
+3.找出没有选修陈红老师的学生
+4.教的学生最少的老师？
+*/
+-- 学生表
+create table student (
+       sid int primary key,
+       sname varchar(6)
+);
+commit;
+
+insert into student values(1, &#39;小明&#39;);
+commit;
+
+select * from student; 
+
+-- 教师表
+create table teacher (
+      tid int primary key,
+      tname varchar(6)
+);
+commit;
+
+insert into teacher values(1, &#39;陈红&#39;);
+insert into teacher values(2, &#39;陈白&#39;);
+commit;
+
+select * from teacher;   
+
+-- 课程表
+create table course (
+      cid int primary key,
+      cname varchar(6),
+      ctype varchar(6)
+);
+commit;
+
+insert into course values(1, &#39;语文&#39;, &#39;文科&#39;);
+insert into course values(2, &#39;数学&#39;, &#39;理科&#39;);
+commit;
+
+select * from course; 
+
+-- 选课表 
+create table choose_course (
+      ccid int primary key,
+      sid int,
+      tid int,
+      cid int
+);
+commit;
+
+--小明选了陈红老师的语文
+insert into choose_course values(1, 1, 1, 1);
+--小明选了陈红老师的数学
+insert into choose_course values(2, 1, 1, 2);
+--小花选了陈红老师的数学
+insert into choose_course values(3, 2, 1, 2);
+--小明选了陈白老师的语文
+insert into choose_course values(4, 1, 2, 1);
+--小花选了陈红老师的语文
+insert into choose_course values(5, 2, 1, 1);
+commit;
+
+select * from choose_course; 
+
+-- 1.查找陈红老师教的学生是那些？
+select t.tid, t.tname, s.sname from choose_course  cc
+inner join teacher t on cc.tid = t.tid
+inner join student s on cc.sid = s.sid
+where cc.tid = 1;
+
+-- 2.找学生小明所有的文科老师？
+select s.sname, c.ctype, t.tname from choose_course cc 
+inner join teacher t on cc.tid = t.tid
+inner join course c on cc.cid = c.cid
+inner join student s on cc.sid = s.sid
+where s.sname = &#39;小明&#39; and c.ctype = &#39;文科&#39; ;
+
+-- 3.找出没有选修陈红老师的学生
+select s.sname, t.tname from choose_course cc 
+inner join teacher t on cc.tid = t.tid
+inner join student s on cc.sid = s.sid
+where t.tname != &#39;陈红&#39; ;
+
+-- 4.教的学生最少的老师？
+select a.*,rownum as rn from 
+( select t.tname, count(s.sname) as t_num from choose_course cc 
+inner join teacher t on cc.tid = t.tid
+inner join student s on cc.sid = s.sid
+group by t.tname order by count(s.sname) asc ) a
+where rownum = 1;
+</code></pre>
+				
+					
+				<!-- ↑  博客输入  ↑ -->
+				</div>
+				
+				<div class="skip-bottom">
+					<div class="previouPage"><a href="../305/305002.html"> <img class="img-l" src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-left.png" alt="左箭头"> <span class="span-txt">常用命令</span></a></div>
+					<div class="nextPage"><a href="../305/305004.html"><span class="span-txt">xxx</span> <img src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-right.png" alt="右箭头"> </a></div>
+				</div>
+				
+			</div>
+		</div>
+		<button onclick="topFunction()" id="myBtn" title="返回顶部"></button>
+		<script src="../../../js/zooming.min.js"></script>
+		<script src="../../../js/bottomJS.js"></script>
+	</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

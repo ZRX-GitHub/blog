@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Mysql简介</title>
+<title>数据表的增删改命令</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link rel="shortcut icon" href="../../../img/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" href="../../../css/nav-auto.css">
 <link rel="stylesheet" href="../../../css/css.css">
 <link rel="stylesheet" href="../../../css/markdownpad-github.css">
+<!--<link rel="stylesheet" href="/css/qqqqqqqqqqqqqqqqqqqq.css">-->
 <link rel="stylesheet" href="../../../css/date-classify-auto.css">
 <link rel="stylesheet" href="../../../css/dark.css">
 <script src="../../../js/topJS.js" type="text/javascript"></script>
@@ -33,35 +34,98 @@
 				<span>当前所在位置：</span>
 				<a href="../../../demo/date.html">资料</a>
 				<span> &gt </span>
-				<a href="../305/305001.html">MySQL</a>
+				<a href="../305/305001.html">Oracle</a>
 				<span> &gt</span>
-				<a href="../305/305002.html">简介</a>
+				<a href="../305/305002.html">数据表的增删改命令</a>
+				<span> &gt</span>
+				<a href="../305/305003.html">多表查询</a>
 			</div>
 			<div class="date-classify-left">
 				<div class="catalog"><p>目录</p>
-					<div class="chapter"><a href="../305/305001.html">简介</a></div> 
+					<div class="chapter"><a href="../305/305001.html">数据表的增删改命令</a></div> 
 					<div class="chapterLine"></div>
-					<div class="chapter"><a href="../305/305002.html">关系代数</a></div> 
+					<div class="chapter"><a href="../305/305002.html">常用命令</a></div> 
 					<div class="chapterLine"></div>
-					<div class="chapter" id="chapter-none"><a href="xxx">xxx</a></div> 	
+					<div class="chapter"><a href="../305/305003.html">多表查询</a></div> 	
 				</div>
 			</div>
 			<div class="date-classify-right">
 				
 				<div class="skip-top">
-					<div class="nextPage"><a href="../305/305002.html"><span class="span-txt">关系代数</span> <img src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-right.png" alt="右箭头"> </a></div>
+					<div class="nextPage"><a href="../305/305002.html"><span class="span-txt">常用命令</span> <img src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-right.png" alt="右箭头"> </a></div>
 				</div>
 				
 				<div class="article">
 				<!-- ↓  博客输入  ↓ -->
+					
+						
+<h2>创建表</h2>
+<pre><code class="language-sql" lang="sql">/*
+create table table_name ( 参数 ) ： 参数和参数之间使用 逗号隔开
+参数： 列名 类型
+*/
+-- 创建一个用户表： id ( 主键：唯一非空 ) 、account 、password 、create_time 、height 、phone
+
+-- 创建表
+create table tb_user(
+	   id int primary key,
+	   account varchar2(6),
+	   password varchar2(8),
+	   height number(3,2),
+	   phone char(11),
+	   birth date,
+	   create_time timestamp 
+);
+
+-- 插入全部数据： 完整插入插入所有字段
+insert into tb_user values 
+(1,&#39;admin&#39;,&#39;123456&#39;,1.99,&#39;15899998888&#39;,to_date(&#39;1990-10-10&#39;,&#39;yyyy-mm-dd&#39;),sysdate);
+commit;
+
+insert into tb_user values 
+(2,&#39;admin&#39;,&#39;123456&#39;,1.99,&#39;1589999&#39;,to_date(&#39;1990-10-10&#39;,&#39;yyyy-mm-dd&#39;),sysdate);
+commit;
+
+-- 插入部分字段
+insert into tb_user 
+(id,account,password,height,phone,create_time) 
+values 
+(3,&#39;user&#39;,&#39;user&#39;,1.88,&#39;131312312&#39;,sysdate);
+commit;
+
+-- 验证可变长度字符串
+select length(password),length(phone) from tb_user;
+</code></pre>
+<p>&nbsp;</p>
+<h2>修改表</h2>
+<pre><code class="language-sql" lang="sql">alter table tb_user add  addr varchar2(100);  -- 添加 新的 属性列
+alter table tb_user modify height number(5,2);  -- 修改 属性列的属性定义
+alter table tb_user drop column addr;  -- 删除 属性列
+alter table tb_user rename addr to addr_new;  -- 重命名 属性列 的名称
+</code></pre>
+<p>&nbsp;</p>
+<h2>删除表</h2>
+<pre><code class="language-sql" lang="sql">drop table tb_user;
+</code></pre>
+<p>&nbsp;</p>
+<h2>修改属性列里的属性</h2>
+<p>根据<strong>主键</strong>修改，不建议根据其他属性修改，不建议范围修改。</p>
+<pre><code class="language-sql" lang="sql">update tb_user set phone = &#39;888&#39; where id = 2;
+commit;
+</code></pre>
+<p>&nbsp;</p>
+<h2>删除属性列</h2>
+<p>根据<strong>主键</strong>删除，不建议根据其他属性删除，不建议范围删除。</p>
+<pre><code class="language-sql" lang="sql">delete tb_user where id = 3;
+commit;
+</code></pre>
 				
 					
-				
 				<!-- ↑  博客输入  ↑ -->
 				</div>
 				
 				<div class="skip-bottom">
-					<div class="nextPage"><a href="../305/305002.html"><span class="span-txt">关系代数</span> <img src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-right.png" alt="右箭头"> </a></div>
+					<div class="nextPage"><a href="../305/305002.html"><span class="span-txt">常用命令</span> <img src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-right.png" alt="右箭头"> </a></div>
 				</div>
 				
 			</div>
