@@ -9,7 +9,7 @@
 	.header {
 		background-color: #343434;
 	}
-	body, #myDropdown, .date-classify-right, .travel-right .article {
+	body, #myDropdown, .date-classify-right, .travel-right .article, hr {
     	background-color: #444;
     	color: #e4e4e4;
   	}
