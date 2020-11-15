@@ -71,7 +71,7 @@ select e.*, d.* from emp e, dept d where e.deptno = d.deptno;
 
 
 -- 子查询 --
--- 实际开发的时候永远不要用 &quot;单独使用 * ，一般选择表调用 &quot; 
+-- 实际开发的时候永远不要用 &quot; 单独使用 * ，一般选择表调用 &quot; 
 select e.* ,（select d.dname from dept d where d.deptno = e.deptno）as dname from emp e;
 </code></pre>
 <p>&nbsp;</p>
