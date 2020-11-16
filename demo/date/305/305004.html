@@ -91,14 +91,13 @@ select score name from student having score&gt;60;
 </li>
 <li><p>只能用where、不能用having</p>
 <pre><code class="language-sql" lang="sql">select score name from student where sex=&quot;man&quot;;  -- 正确的
-
 select score name from student having sex=&quot;man&quot;;  -- 错误的，因为前面没有筛选sex。
 </code></pre>
 <p>&nbsp;</p>
 </li>
 <li><p>只能用having、不能用where</p>
-<pre><code class="language-sql" lang="sql">select  goods_category_id,avg(goods_price) as ag from goods_table group by goods_category having ag&gt;100; 正确的
-select goods_category_id,avg(goods_price) as ag from goods_table where ag&gt;100 group by goods_category;  错误的
+<pre><code class="language-sql" lang="sql">select  goods_category_id,avg(goods_price) as ag from goods_table group by goods_category having ag&gt;100; -- 正确的
+select goods_category_id,avg(goods_price) as ag from goods_table where ag&gt;100 group by goods_category;  -- 错误的
 </code></pre>
 <p>注意:where 后面要跟的是数据表里的字段，如果我把ag换成avg(goods_price)也是错误的！因为表里没有该字段。而having只是根据前面查询出来的是什么就可以后面接什么。</p>
 </li>
