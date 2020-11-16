@@ -127,32 +127,56 @@
 		grid-template-rows: 110px;
 		box-sizing: border-box;
 	}
-	.date-plate .informations {
+/*	  保留	*/
+	.date-plate .informations  {
+		height: auto;
+		padding: 2px 4px 3px 4px;
 		text-align: justify;
 		box-sizing: border-box;
-		display: -webkit-box;
-		overflow: hidden;
+		display: -webkit-box;  
+		overflow: hidden;  /* 溢出省略号（通配） */
+		overflow: ellipsis;  /*溢出省略号，支持ie、safari（webkit）*/ 
+		-o-text-overflow: ellipsis;  /*溢出省略号，支持opera*/ 
 		text-overflow: ellipsis;
 		word-wrap: break-word;
-		white-space: normal !important;
-		-webkit-line-clamp: 3;
+		-webkit-line-clamp: 4;
 		-webkit-box-orient: vertical;
 	}
 	
+	.information4 .informations aa {
+/*		width: inherit;*/
+		height: auto;
+		padding: 2px 4px 3px 4px;
+		text-align: justify;
+/*		font-size: 15px;*/
+		box-sizing: border-box;
+		display: -webkit-box;  
+		overflow: hidden;  /* 溢出省略号（通配） */
+		overflow: ellipsis;  /*溢出省略号，支持ie、safari（webkit）*/ 
+		-o-text-overflow: ellipsis;  /*溢出省略号，支持opera*/ 
+		text-overflow: ellipsis;
+		word-wrap: break-word;
+/*		white-space: inherit !important;*/
+		-webkit-line-clamp: 5;
+		-webkit-box-orient: vertical;
+	}
+	
+	
 	.date-plate .informations:hover {
-		margin-top: -28px;
-		margin-bottom: 0px;
+		margin-top: -40px;
+		margin-bottom: 5px;
 		display: -webkit-box;
 		overflow: hidden;
 		text-overflow: ellipsis;
 		word-wrap: break-word;
 		white-space: normal !important;
-		-webkit-line-clamp: 5;
+		-webkit-line-clamp: 6;
 		-webkit-box-orient: vertical;
 		box-sizing: border-box;
 		background: #FFFFFF;
 		opacity: 0.7;
-		height: 132px;	
+/*		height: 132px;	*/
+		height: auto;
 	}
 	
 	/*
@@ -160,14 +184,15 @@
 	*/
 	/* 文本溢出，省略号，1行 */
 	.informations .informations-title {
-		height: auto;
-		overflow: hidden;  /* 溢出省略号（通配） */
-		overflow: ellipsis;  /*溢出省略号，支持ie、safari（webkit）*/ 
-		-o-text-overflow: ellipsis;  /*溢出省略号，支持opera*/ 
-		text-overflow: ellipsis;
-		word-wrap: break-word;
-		white-space: nowrap !important;
-		-webkit-line-clamp: 1;
+		font-size: 18px;
+/*		height: auto;*/
+/*		overflow: hidden;   溢出省略号（通配） */
+/*		overflow: ellipsis;  溢出省略号，支持ie、safari（webkit） */
+/*		-o-text-overflow: ellipsis;  溢出省略号，支持opera */
+/*		text-overflow: ellipsis;*/
+/*		word-wrap: break-word;*/
+/*		white-space: nowrap !important;*/
+/*		-webkit-line-clamp: 1;*/
 	}
 	.date-plate-informations-line {
 		width: inherit;
@@ -183,12 +208,14 @@
 	
 	/* 简述 */
 	/* 文本溢出，省略号，3行 */
-	.informations .informations-text-sketch {
+	.informations .informations-text-sketch {font-size: 17.2px;}
+	
+	.information4 .informations  {
 /*		width: inherit;*/
 		height: auto;
 		padding: 2px 4px 3px 4px;
 		text-align: justify;
-		font-size: 15px;
+/*		font-size: 15px;*/
 		box-sizing: border-box;
 		display: -webkit-box;  
 		overflow: hidden;  /* 溢出省略号（通配） */
@@ -197,7 +224,7 @@
 		text-overflow: ellipsis;
 		word-wrap: break-word;
 /*		white-space: inherit !important;*/
-		-webkit-line-clamp: 3;
+		-webkit-line-clamp: 5;
 		-webkit-box-orient: vertical;
 	}
 	.wrapper .informations a {
