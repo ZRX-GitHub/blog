@@ -263,20 +263,42 @@ select e.* ,（select d.dname from dept d where d.deptno = e.deptno）as dname f
 							</a>
 						</div>
 						<div class="information5 informations">
-							<a href="../demo/date/304/304002.html">
-								<span class="informations-title">输出</span>
+							<a href="date/305/305005.html">
+								<span class="informations-title">高级查询</span>
 									<div class="date-plate-informations-line"></div>
 									<div class="informations-div-text">
-										<p class="informations-text-sketch">JavaScript 是互联网上最流行的脚本语言，这门语言可用于HTML和web，更可广泛用于服务器、PC、笔记本电脑、平板电脑和智能手机等设备。</p>
+										<p class="informations-text-sketch">-- dbms_random.value() 返回一个随机数
+select dbms_random.value() from dual; -- 返回一个 0 - 1 之间的随机数
+-- 随机返回 5 条记录
+select a.*,rownum  from 
+(select e.*,dbms_random.value() as rd from emp e order by rd )  a 
+where rownum &lt;=5 ;</p>
 									</div>
 							</a>
 						</div>
 						<div class="information6 informations">
-							<a href="date/304/304002.html">
-								<span class="informations-title">输出</span>
+							<a href="date/305/305006.html">
+								<span class="informations-title">数据字典之约束</span>
 									<div class="date-plate-informations-line"></div>
 									<div class="informations-div-text">
-										<p class="informations-text-sketch">JavaScript 是互联网上最流行的脚本语言，这门语言可用于HTML和web，更可广泛用于服务器、PC、笔记本电脑、平板电脑和智能手机等设备。</p>
+										<p class="informations-text-sketch">-- 数据字典 ： Oracle 是通过很多数据字典来进行维护的 本质上就是一张表
+select * from user_tables;
+
+-- 约束： 约定一个字段必须要遵守的规则
+-- 约束的写法： 创建表的时候设定约束、 表创建之后设定约束
+drop table tb_user;
+create table tb_user (
+-- 主键约束： 唯一且不为null
+user_id int primary key,
+-- 非空： 不能为空
+uname varchar2(12) not null ,
+-- 唯一约束 : 唯一可以为null
+phone varchar2(12) unique,
+-- 检查约束
+age int check(age &gt;=0 and age &lt;=100),
+-- 默认值: 不设定时间的时候 默认为 系统当前时间
+create_time timestamp default sysdate
+);</p>
 									</div>
 							</a>
 						</div>
