@@ -94,7 +94,7 @@ where rn&lt;3;
 
 -- row_number() over (order by ename)  伪列函数
 select * from 
-(select row_number() over (order by ename) as rn,ename from emp)；
+(select row_number() over (order by ename) as rn,ename from emp);
 
 -- 查询表中的 奇数 / 偶数 行的数据
 select * from 
