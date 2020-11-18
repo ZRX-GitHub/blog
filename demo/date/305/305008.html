@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>索引</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel="shortcut icon" href="../../../img/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="../../../css/nav-auto.css">
+<link rel="stylesheet" href="../../../css/css.css">
+<link rel="stylesheet" href="../../../css/markdownpad-github.css">
+<!--<link rel="stylesheet" href="/css/qqqqqqqqqqqqqqqqqqqq.css">-->
+<link rel="stylesheet" href="../../../css/date-classify-auto.css">
+<link rel="stylesheet" href="../../../css/dark.css">
+<script src="../../../js/topJS.js" type="text/javascript"></script>
+</head>
+	<body class="date-index">
+		<div class="header">
+			<div class="logo"><img src="../../../img/logo.png" alt=""></div>
+			<div class="dropdown" id="dropdown">
+				<div onclick="myFunction()" class="dropbtn"></div>
+				<div id="myDropdown" class="dropdown-content">
+					<div class="nav">		
+						<a href="../../../index.html"><div class="ul" id="index">主页<div class="nav-line"></div></div></a>
+						<a href="../../travel.html"><div class="ul" id="demo1">踏行<div class="nav-line"></div></div></a>
+						<a href="../../date.html"><div class="ul" id="demo2">资料<div class="nav-line"></div></div></a>
+						<a href="../../build.html"><div class="ul" id="demo3">建站<div class="nav-line"></div></div></a>
+						<a href="../../about.html"><div class="ul" id="demo4">关于<div class="nav-line"></div></div></a>
+					</div>
+				</div>
+			</div>	
+		</div>
+		<div id="main">
+			<div class="nav-article">
+				<span>当前所在位置：</span>
+				<a href="../../../demo/date.html">资料</a>
+				<span> &gt </span>
+				<a href="../305/305001.html">Oracle</a>
+				<span> &gt</span>
+				<a href="../305/305008.html">索引</a>
+			</div>
+			<div class="date-classify-left">
+				<div class="catalog"><p>目录</p>
+					<div class="chapter"><a href="../305/305001.html">数据表的增删改命令</a></div> 
+					<div class="chapterLine"></div>
+					<div class="chapter"><a href="../305/305002.html">常用函数</a></div> 
+					<div class="chapterLine"></div>
+					<div class="chapter"><a href="../305/305003.html">多表查询</a></div> 
+					<div class="chapterLine"></div>
+					<div class="chapter"><a href="../305/305004.html">where和having的区别</a></div> 	
+					<div class="chapterLine"></div>
+					<div class="chapter"><a href="../305/305005.html">高级查询</a></div> 
+					<div class="chapterLine"></div>
+					<div class="chapter"><a href="../305/305006.html">数据字典之约束</a></div> 
+					<div class="chapterLine"></div>
+					<div class="chapter"><a href="../305/305007.html">性能优化</a></div> 
+					<div class="chapterLine"></div>
+					<div class="chapter"><a href="../305/305008.html">索引</a></div> 
+					<div class="chapterLine"></div>
+					<div class="chapter"><a href="../305/305009.html">基本编程</a></div> 
+				</div>
+			</div>
+			<div class="date-classify-right">
+				
+				<div class="skip-top">
+					<div class="previouPage"><a href="../305/305007.html"> <img class="img-l" src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-left.png" alt="左箭头"> <span class="span-txt">性能优化</span></a></div>
+					<div class="nextPage"><a href="../305/305009.html"><span class="span-txt">基本编程</span> <img src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-right.png" alt="右箭头"> </a></div>
+				</div>
+				
+				<div class="article">
+				<!-- ↓  博客输入  ↓ -->
+					
+						
+<h1>索引</h1>
+<h2>查看已在索引</h2>
+<pre><code class="language-sql" lang="sql">-- 索引，用 user_indexes 和 user_ind_columns 系统表查看已经存在的索引
+/*  
+user_indexes ： 系统视图存放是  索引的名称  以及该  索引是否是唯一索引  等信息。
+user_ind_column ：系统视图存放的是  索引名称，对应的表和列等。
+*/
+select * from user_indexes where table_name = &#39;TB_USER&#39;;
+select * from user_ind_columns where table_name = &#39;TB_USER&#39;;
+
+select * from tb_user;
+</code></pre>
+<p>&nbsp;</p>
+<h2>序列</h2>
+<pre><code class="language-sql" lang="sql">-- 创建一个序列 seq_user_pk ，不能重复取：即取了 序号为1 的，下一次就不可能再取出 序号为 1 的
+/*
+create sequence seq_user_pk 
+increment by  1 -- 每次增加 1 个
+start with 1  -- 从1 开始计数
+maxvalue / nomaxvalue  -- 序列最大值 / 最小值
+cache / nocache  -- 开启缓存 / 关闭缓存。开启缓存，效率高，只是如果数据库宕机了，缓存会丢失，出现序列号跳号的情况。
+cycle / nocycle  -- 累加，并且循环 / 累加，且不循环
+*/
+create sequence seq_user_pk
+start with 3
+increment by 1
+nocache nocycle;
+
+-- 获取序列中的数组
+select seq_user_pk.nextval from dual;
+
+-- 删除 tb_user 中的 phone 的唯一索引
+alter table tb_user drop constraint SYS_C0010825;
+
+-- pl/sql 编程实现插入 100 W 数据
+
+-- user_id  序列
+-- name  唯一性   sys_guid()
+-- phone 999
+-- age  随机数
+-- create_time  sysdate
+
+-- select sys_guid() from dual;
+
+-- 修改tb_user的name属性的长度 100
+
+alter table tb_user modify uname varchar2(100);
+
+select ceil(dbms_random.value()*100) from dual;
+</code></pre>
+<p>&nbsp;</p>
+<h2>添加一个索引</h2>
+<pre><code class="language-sql" lang="sql">-- 给uname 字段添加一个索引
+drop index IDX_UNAME;
+create index idx_uname on tb_user(uname);
+</code></pre>
+<p>&nbsp;</p>
+<h2>索引建立</h2>
+<pre><code class="language-sql" lang="sql">-- 索引建立： 
+-- 1. 读多写少
+
+
+-- 复合索引
+-- 1. 删除主键和唯一索引
+select * from user_ind_columns where table_name = &#39;TB_USER&#39;;
+alter table tb_user drop constraint SYS_C0010804;
+drop index IDX_UNAME;
+
+-- 创建一个复合索引  user_id  uname 
+create index idx_id_name on tb_user(user_id,uname);
+
+select * from user_ind_columns where table_name = &#39;TB_USER&#39;;
+drop index idx_id_name;  -- 删除索引
+
+-- 通过id查询   9
+select * from tb_user where user_id = 9;
+
+-- 通过 uname  B43F9A48540E01B9E05011AC02000247
+select * from tb_user where uname = &#39;B43F9A48540E01B9E05011AC02000247&#39;;
+select * from tb_user where user_id = 9 and uname = &#39;B43F9A48540E01B9E05011AC02000247&#39;;  -- 性能更好
+
+-- 复合索引在使用的时候有个规则 最左前缀法则
+select * from tb_user where user_id = 9 and phone = &#39;999&#39;;
+
+select * from tb_user where user_id in (1199,1200);
+
+select count(1) from tb_user where user_id != 1199;
+select count(1) from tb_user where user_id &lt; 1200;
+select count(1) from tb_user where user_id != 1200;
+</code></pre>
+				
+					
+				<!-- ↑  博客输入  ↑ -->
+				</div>
+				
+				<div class="skip-bottom">
+					<div class="previouPage"><a href="../305/305007.html"> <img class="img-l" src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-left.png" alt="左箭头"> <span class="span-txt">性能优化</span></a></div>
+					<div class="nextPage"><a href="../305/305009.html"><span class="span-txt">基本编程</span> <img src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-right.png" alt="右箭头"> </a></div>
+				</div>
+				
+			</div>
+		</div>
+		<button onclick="topFunction()" id="myBtn" title="返回顶部"></button>
+		<script src="../../../js/zooming.min.js"></script>
+		<script src="../../../js/bottomJS.js"></script>
+	</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
