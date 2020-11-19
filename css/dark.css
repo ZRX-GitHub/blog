@@ -9,7 +9,7 @@
 	.header {
 		background-color: #343434;
 	}
-	body, #myDropdown, .date-classify-right, .travel-right .article {
+	body, #myDropdown, .data-classify-right, .travel-right .article {
     	background-color: #444;
     	color: #e4e4e4;
   	}
@@ -57,16 +57,16 @@
 	/*
 	资料模块
 	*/
-	.date-right .line-left, .date-classify-right .line-left {
+	.data-right .line-left, .data-classify-right .line-left {
 		background-color: #8C0000;
 	}
-	.date-right .information {
+	.data-right .information {
 		-webkit-filter: brightness(2.3); /* Safari and Chrome */
 		-moz-filter: brightness(2.3);    /* Firefox  */
 		-o-filter: brightness(2.3);      /* Opera */
 		filter: brightness(2.3);
 	}
-	.date-classify-right .article hr {
+	.data-classify-right .article hr {
 	    clear: both;
 	    margin: 15px 0;
 	    height: 0px;
@@ -76,15 +76,15 @@
 	    border-bottom: 4px solid #1E212D;
 	    padding: 0;
 	}
-	.date-right .article pre, .date-classify-right .article pre {
+	.data-right .article pre, .data-classify-right .article pre {
 		background: #323232;
 		border: 1px solid #312C2C;
 	}
-	.date-right .article button, .date-classify-right .article button {
+	.data-right .article button, .data-classify-right .article button {
 		background: #748835;
 		color: #A90000;
 	}
-	.date-right .date-plate {
+	.data-right .data-plate {
 		background-color: #3F3F3F;
 	}
 	/*资料方块*/
@@ -132,9 +132,6 @@
 	    border-bottom: 4px solid #1E212D;
 	    padding: 0;
 	}
-	
-
-	
 	
 	
 }

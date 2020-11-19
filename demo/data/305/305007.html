@@ -9,11 +9,11 @@
 <link rel="stylesheet" href="../../../css/css.css">
 <link rel="stylesheet" href="../../../css/markdownpad-github.css">
 <!--<link rel="stylesheet" href="/css/qqqqqqqqqqqqqqqqqqqq.css">-->
-<link rel="stylesheet" href="../../../css/date-classify-auto.css">
+<link rel="stylesheet" href="../../../css/data-classify-auto.css">
 <link rel="stylesheet" href="../../../css/dark.css">
 <script src="../../../js/topJS.js" type="text/javascript"></script>
 </head>
-	<body class="date-index">
+	<body class="data-index">
 		<div class="header">
 			<div class="logo"><img src="../../../img/logo.png" alt=""></div>
 			<div class="dropdown" id="dropdown">
@@ -22,7 +22,7 @@
 					<div class="nav">		
 						<a href="../../../index.html"><div class="ul" id="index">主页<div class="nav-line"></div></div></a>
 						<a href="../../travel.html"><div class="ul" id="demo1">踏行<div class="nav-line"></div></div></a>
-						<a href="../../date.html"><div class="ul" id="demo2">资料<div class="nav-line"></div></div></a>
+						<a href="../../data.html"><div class="ul" id="demo2">资料<div class="nav-line"></div></div></a>
 						<a href="../../build.html"><div class="ul" id="demo3">建站<div class="nav-line"></div></div></a>
 						<a href="../../about.html"><div class="ul" id="demo4">关于<div class="nav-line"></div></div></a>
 					</div>
@@ -32,38 +32,38 @@
 		<div id="main">
 			<div class="nav-article">
 				<span>当前所在位置：</span>
-				<a href="../../../demo/date.html">资料</a>
+				<a href="../../data.html">资料</a>
 				<span> &gt </span>
-				<a href="../305/305001.html">Oracle</a>
+				<a href="305001.html">Oracle</a>
 				<span> &gt</span>
-				<a href="../305/305007.html">数据字典之约束</a>
+				<a href="305007.html">数据字典之约束</a>
 			</div>
-			<div class="date-classify-left">
+			<div class="data-classify-left">
 				<div class="catalog"><p class="text">目 &nbsp 录</p>
-					<a class="chapter" href="../305/305001.html">数据表的增删改命令</a>
+					<a class="chapter" href="305001.html">数据表的增删改命令</a>
 					<div class="chapterLine"></div>
-					<a class="chapter" href="../305/305002.html">常用函数</a>
+					<a class="chapter" href="305002.html">常用函数</a>
 					<div class="chapterLine"></div>
-					<a class="chapter" href="../305/305003.html">多表查询</a>
+					<a class="chapter" href="305003.html">多表查询</a>
 					<div class="chapterLine"></div>
-					<a class="chapter" href="../305/305004.html">where和having的区别</a>
+					<a class="chapter" href="305004.html">where和having的区别</a>
 					<div class="chapterLine"></div>
-					<a class="chapter" href="../305/305005.html">高级查询</a>
+					<a class="chapter" href="305005.html">高级查询</a>
 					<div class="chapterLine"></div>
-					<a class="chapter" href="../305/305006.html">数据字典之约束</a>
+					<a class="chapter" href="305006.html">数据字典之约束</a>
 					<div class="chapterLine"></div>
-					<a class="chapter" href="../305/305007.html">性能优化</a>
+					<a class="chapter" href="305007.html">性能优化</a>
 					<div class="chapterLine"></div>
-					<a class="chapter" href="../305/305008.html">索引</a>
+					<a class="chapter" href="305008.html">索引</a>
 					<div class="chapterLine"></div>
-					<a class="chapter" href="../305/305009.html">基本编程</a>
+					<a class="chapter" href="305009.html">基本编程</a>
 				</div>
 			</div>
-			<div class="date-classify-right">
+			<div class="data-classify-right">
 				
 				<div class="skip-top">
-					<div class="previouPage"><a href="../305/305006.html"> <img class="img-l" src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-left.png" alt="左箭头"> <span class="span-txt">数据字典之约束</span></a></div>
-					<div class="nextPage"><a href="../305/305008.html"><span class="span-txt">索引</span> <img src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-right.png" alt="右箭头"> </a></div>
+					<div class="previouPage"><a href="305006.html"> <img class="img-l" src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-left.png" alt="左箭头"> <span class="span-txt">数据字典之约束</span></a></div>
+					<div class="nextPage"><a href="305008.html"><span class="span-txt">索引</span> <img src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-right.png" alt="右箭头"> </a></div>
 				</div>
 				
 				<div class="article">
@@ -85,8 +85,8 @@ select * from tb_user where uname like &#39;B_3F9A48540E01B9E05011AC02000247&#39
 <pre><code class="language-sql" lang="sql">select * from tb_user where upper(uname) = (&#39;B43F9A48540E01B9E05011AC02000247&#39;);  -- 不 建议查询的方法
 select * from tb_user where uname = upper(&#39;B43F9A48540E01B9E05011AC02000247&#39;);  -- 建议查询的方法
 
-insert into tb_user values (11000007,&#39;TTTT&#39;,1000,20,sysdate);
-insert into tb_user values (11000008,&#39;TTTT&#39;,1000,20,sysdate);
+insert into tb_user values (11000007,&#39;TTTT&#39;,1000,20,sysdata);
+insert into tb_user values (11000008,&#39;TTTT&#39;,1000,20,sysdata);
 commit;
 create index idx_phone on tb_user(phone);
 select * from user_ind_columns where table_name = &#39;TB_USER&#39;;
@@ -140,8 +140,8 @@ select * from where sal &gt;= 90;  -- 正确的高性能的写法
 				</div>
 				
 				<div class="skip-bottom">
-					<div class="previouPage"><a href="../305/305006.html"> <img class="img-l" src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-left.png" alt="左箭头"> <span class="span-txt">数据字典之约束</span></a></div>
-					<div class="nextPage"><a href="../305/305008.html"><span class="span-txt">索引</span> <img src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-right.png" alt="右箭头"> </a></div>
+					<div class="previouPage"><a href="305006.html"> <img class="img-l" src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-left.png" alt="左箭头"> <span class="span-txt">数据字典之约束</span></a></div>
+					<div class="nextPage"><a href="305008.html"><span class="span-txt">索引</span> <img src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-right.png" alt="右箭头"> </a></div>
 				</div>
 				
 			</div>
