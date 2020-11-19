@@ -232,6 +232,9 @@
 /* TABLES
 =============================================================================*/
 
+.article table {
+	width: 100%;
+}
 .article table th {
   font-weight: bold;
 }
