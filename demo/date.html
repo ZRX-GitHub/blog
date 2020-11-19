@@ -44,9 +44,11 @@
 				<div class="date-plate">
 					<div class="line-left"></div><span>PHP</span><div class="more"><a href="../demo/date/301/301001.html">查看更多</a></div>
 					<div class="date-plate-line"></div>
-					<div class="wrapper9 wrapper6 wrapper3">
+					<div class="wrapper3">
+						
 						<div class="information1 informations">
-							<a href="../demo/date/301/301001.html"><span class="informations-title">简介</span>
+							<a href="../demo/date/301/301001.html">
+								<span class="informations-title">简介</span>
 								<div class="date-plate-informations-line"></div>
 								<div class="informations-div-text">
 									<p class="informations-text-sketch">PHP 是一种创建动态交互性站点的强有力的服务器端脚本语言。PHP 是免费的，并且使用广泛。对于像微软 ASP 这样的竞争者来说，PHP 无疑是另一种高效率的选项。</p>
@@ -54,7 +56,8 @@
 							</a>
 						</div>
 						<div class="information2 informations">
-							<a href="../demo/date/304/304002.html"><span class="informations-title">php留言板</span>
+							<a href="../demo/date/304/304002.html">
+								<span class="informations-title">php留言板</span>
 								<div class="date-plate-informations-line"></div>
 								<div class="informations-div-text">
 									<p class="informations-text-sketch">利用php+mysql+工具(vscode+navicat+xampp)搭建php留言板</p>
@@ -62,7 +65,8 @@
 							</a>
 						</div>
 						<div class="information3 informations">
-							<a href=""><span class="informations-title">xx</span>
+							<a href="">
+								<span class="informations-title">xx</span>
 								<div class="date-plate-informations-line"></div>
 								<div class="informations-div-text">
 									<p class="informations-text-sketch">xx</p>
@@ -78,7 +82,7 @@
 				<div class="date-plate">
 					<div class="line-left"></div><span>Python</span><div class="more"><a href="xxx">查看更多</a></div>
 					<div class="date-plate-line"></div>
-					<div class="wrapper9 wrapper6 wrapper3">
+					<div class="wrapper9">
 						
 						<div class="information1 informations">
 							<a href="date/304/304002.html">
@@ -172,7 +176,8 @@
 				<div class="date-plate">
 					<div class="line-left"></div><span>JavaScript</span><a href=""><div class="more"><a href="../demo/date/304/304001.html">查看更多</a></div></a>
 					<div class="date-plate-line"></div>
-					<div class="wrapper9 wrapper6 wrapper3">
+					<div class="wrapper3">
+						
 						<div class="information1 informations">
 							<a href="date/304/304001.html"><span class="informations-title">简介</span>
 								<div class="date-plate-informations-line"></div>
@@ -208,13 +213,15 @@
 				<div class="date-plate">
 					<div class="line-left"></div><span>Oracle</span><div class="more"><a href="../demo/date/305/305001.html">查看更多</a></div>
 					<div class="date-plate-line"></div>
-					<div class="wrapper9 wrapper6 wrapper3">
+					<div class="wrapper9">
+						
 						<div class="information1 informations">
 							<a href="date/305/305001.html">
 								<span class="informations-title">数据表的增删改命令</span>
 								<div class="date-plate-informations-line"></div>
 								<div class="informations-div-text">
-									<p class="informations-text-sketch">/*
+									<p class="informations-text-sketch">
+/*
 create table table_name ( 参数 ) ： 参数和参数之间使用 逗号隔开
 参数： 列名 类型
 */
@@ -227,7 +234,8 @@ create table table_name ( 参数 ) ： 参数和参数之间使用 逗号隔开
 								<span class="informations-title">常用函数</span>
 								<div class="date-plate-informations-line"></div>
 								<div class="informations-div-text">
-									<p class="informations-text-sketch">简单的查询预计：--查询当前用户下的所以对象（表）
+									<p class="informations-text-sketch">
+简单的查询预计：--查询当前用户下的所以对象（表）
 select * from tab;
 -- 查询员工表的所有信息  * 表示表中的所以数据，单独查询用 逗号隔开
 select * from emp;
@@ -241,7 +249,8 @@ select ename,sal from emp;</p>
 								<span class="informations-title">多表查询</span>
 								<div class="date-plate-informations-line"></div>
 								<div class="informations-div-text">
-									<p class="informations-text-sketch">多表查询：-- 笛卡尔积、子查询、连接查询（内连、满外连、左连、右连）
+									<p class="informations-text-sketch">
+多表查询：-- 笛卡尔积、子查询、连接查询（内连、满外连、左连、右连）
 
 -- 笛卡尔积 --
 --比较简单、性能比较差，因为先会做排列组然后再进行条件过滤
@@ -273,7 +282,8 @@ select e.* ,（select d.dname from dept d where d.deptno = e.deptno）as dname f
 								<span class="informations-title">高级查询</span>
 								<div class="date-plate-informations-line"></div>
 								<div class="informations-div-text">
-									<p class="informations-text-sketch">-- dbms_random.value() 返回一个随机数
+									<p class="informations-text-sketch">
+-- dbms_random.value() 返回一个随机数
 select dbms_random.value() from dual; -- 返回一个 0 - 1 之间的随机数
 -- 随机返回 5 条记录
 select a.*,rownum  from 
@@ -287,7 +297,8 @@ where rownum &lt;=5 ;</p>
 								<span class="informations-title">数据字典之约束</span>
 								<div class="date-plate-informations-line"></div>
 								<div class="informations-div-text">
-									<p class="informations-text-sketch">-- 数据字典 ： Oracle 是通过很多数据字典来进行维护的 本质上就是一张表
+									<p class="informations-text-sketch">
+-- 数据字典 ： Oracle 是通过很多数据字典来进行维护的 本质上就是一张表
 select * from user_tables;
 
 -- 约束： 约定一个字段必须要遵守的规则
@@ -314,7 +325,8 @@ create_time timestamp default sysdate
 								<span class="informations-title">性能优化</span>
 								<div class="date-plate-informations-line"></div>
 								<div class="informations-div-text">
-									<p class="informations-text-sketch">Oracle的性能优化准则：表使用别名,命名要一致. 减少表的解析。如，select * from emp e;
+									<p class="informations-text-sketch">
+Oracle的性能优化准则：表使用别名,命名要一致. 减少表的解析。如，select * from emp e;
 like 查询;尽量不用通配符 “%” 或者 “<em>” 作为查询字符串的第一个字符；当通配符 “%” 或者 “</em>” 作为查询字符串的第一个字符时，索引不会被使用。比如用 T 表中Column1 LIKE ，%5400%‟ 这个条件会产生全表扫描，如果改成 Column1 ‟X5400%‟ OR Column1 LIKE ‟B5400%‟ 则会利用 Column1 的索引进行两个范围的查询，性能肯定大提高。
 <strong>PS：“%”、“_”的位置可任意。</strong></p>
 								</div>
@@ -325,7 +337,8 @@ like 查询;尽量不用通配符 “%” 或者 “<em>” 作为查询字符�
 								<span class="informations-title">索引</span>
 								<div class="date-plate-informations-line"></div>
 								<div class="informations-div-text">
-									<p class="informations-text-sketch">-- 索引，用 user_indexes 和 user_ind_columns 系统表查看已经存在的索引
+									<p class="informations-text-sketch">
+-- 索引，用 user_indexes 和 user_ind_columns 系统表查看已经存在的索引
 /*  
 user_indexes ： 系统视图存放是  索引的名称  以及该  索引是否是唯一索引  等信息。
 user_ind_column ：系统视图存放的是  索引名称，对应的表和列等。
@@ -342,7 +355,8 @@ select * from tb_user;</p>
 								<span class="informations-title">基本编程</span>
 								<div class="date-plate-informations-line"></div>
 								<div class="informations-div-text">
-									<p class="informations-text-sketch">declare 
+									<p class="informations-text-sketch">
+declare 
 	-- 声明变量 i = 1
 	i int := 1;
 	a varchar(100);
@@ -366,7 +380,7 @@ end;</p>
 				<div class="date-plate">
 					<div class="line-left"></div><span>其余资料</span><div class="more"><a href="../demo/date/other/1.html">查看更多</a></div>
 					<div class="date-plate-line"></div>
-					<div class="wrapper9 wrapper6 wrapper3">
+					<div class="wrapper3">
 						
 						<div class="information1 informations">
 							<a href="date/other/1.html">
@@ -378,7 +392,7 @@ end;</p>
 							</a>
 						</div>
 						<div class="information2 informations">
-							<a href="../demo/date/other/2.html">
+							<a href="date/other/2.html">
 								<span class="informations-title">系统通信原理期末考试资料安装</span>
 								<div class="date-plate-informations-line"></div>
 								<div class="informations-div-text">
@@ -387,11 +401,17 @@ end;</p>
 							</a>
 						</div>
 						<div class="information3 informations">
-							<a href="../demo/date/other/3.html">
-								<span class="informations-title">数据库期末考试资料</span>
+							<a href="date/other/3.html">
+								<span class="informations-title">树</span>
 								<div class="date-plate-informations-line"></div>
 								<div class="informations-div-text">
-									<p class="informations-text-sketch">3</p>
+									<p class="informations-text-sketch">
+红黑树：
+时间复杂度是O(lgn)；
+1、每个节点都有红色或黑色；
+2、树的根始终是黑色的 (黑土地孕育黑树根 )；
+3、没有两个相邻的红色节点（红色节点不能有红色父节点或红色子节点，<strong style="font-size: 12px;">并没有说不能出现连续的黑色节点</strong>）；
+4、从节点（包括根）到其任何后代NULL节点(叶子结点下方挂的两个空节点，并且认为他们是黑色的)的每条路径都具有相同数量的黑色节点。</p>
 								</div>
 							</a>
 						</div>
