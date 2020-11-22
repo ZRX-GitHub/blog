@@ -294,19 +294,19 @@
 	.wrapper9 {
 		display: grid;
 		grid-template-columns: 33.3% 33.3% 33.3%;  /* grid-template-columns的n个值表示n列，相应的数值表示列宽即都为  px。 */
-		grid-template-rows: 113px 113px 113px;     /* grid-template-rows的n个值表示n行，相应的数值表示行高即都为  px */
+		grid-template-rows: 114px 114px 114px;     /* grid-template-rows的n个值表示n行，相应的数值表示行高即都为  px */
 		box-sizing: border-box;
 	}
 	.wrapper6 {
 		display: grid;
 		grid-template-columns: 33.3% 33.3% 33.3%;
-		grid-template-rows: 113px 113px;
+		grid-template-rows: 114px 114px;
 		box-sizing: border-box;
 	}
 	.wrapper3 {
 		display: grid;
 		grid-template-columns: 33.3% 33.3% 33.3%;
-		grid-template-rows: 113px;
+		grid-template-rows: 114px;
 		box-sizing: border-box;
 	}
 	
