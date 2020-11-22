@@ -9,7 +9,7 @@
 	.header {
 		background-color: #343434;
 	}
-	body, #myDropdown, .data-classify-right, .travel-right .article {
+	body, #myDropdown, .data-classify-right, .travel-right .article, table {
     	background-color: #444;
     	color: #e4e4e4;
   	}
@@ -25,7 +25,6 @@
 	 	opacity:0.6; 
 		filter: alpha(opacity=60);
 	}
-	
 	#myBtn {
 		opacity:0.6; 
 		filter: alpha(opacity=60);

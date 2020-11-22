@@ -233,7 +233,7 @@
 =============================================================================*/
 
 .article table {
-	width: 100%;
+  max-width: 100%;
 }
 .article table th {
   font-weight: bold;
