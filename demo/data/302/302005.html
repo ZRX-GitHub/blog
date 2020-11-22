@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>CMD执行Java程序</title>
+<title>流程控制</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link rel="shortcut icon" href="../../../img/favicon.ico" type="image/x-icon">
@@ -33,10 +33,10 @@
 			<div class="nav-article">
 				<span>当前所在位置：</span>
 				<a href="../../data.html">资料</a>
-				<span> &g; </span>
+				<span> &gt; </span>
 				<a href="302001.html">Java</a>
 				<span> &gt; </span>
-				<a href="302001.html">CMD执行Java程序</a>
+				<a href="302005.html">流程控制</a>
 			</div>
 			<div class="data-classify-left">
 				<div class="catalog"><p class="text">目 &nbsp; 录</p>
@@ -54,63 +54,85 @@
 			<div class="data-classify-right">
 				
 				<div class="skip-top">
-					<div class="nextPage"><a href="302002.html"><span class="span-txt">Java规则</span> <img src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-right.png" alt="右箭头"> </a></div>
+					<div class="previouPage"><a href="302004.html"> <img class="img-l" src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-left.png" alt="左箭头"> <span class="span-txt">方法</span></a></div>
+					<div class="nextPage"><a href="302006.html"><span class="span-txt">xxx</span> <img src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-right.png" alt="右箭头"> </a></div>
 				</div>
 				
 				<div class="article"> 
 				<!-- ↓  博客输入  ↓ -->
 					
-<h1>CMD执行java程序</h1>
-<h2>cmd简单切换</h2>
-<ol>
-<li><p><strong>win+ r</strong>：打开cmd命令台，cmd打开默认进入C盘。&quot; E: &quot;,进入E盘根目录。</p>
-<pre><code class="language-cmd" lang="cmd">C:\Users\10119&gt;E:
-
-E:\&gt;
-</code></pre>
+<p><span class="published">发布时间：2020-11-20-3</span></p>
+<h1>流程控制</h1>
+<div>[TOC]</div>
+<h2>1、顺序结构</h2>
+<p>按顺序一步一步向下执行。</p>
 <p>&nbsp;</p>
-</li>
-
-</ol>
-<ol start="2" >
-<li>dir 打开当前目录下的文件夹(在知道文件夹的位置情况下可忽略)。</li>
-
-</ol>
-<ol start="3" >
-<li><p>选择你要的文件夹，比如：cd E:\XXX  进入程序xxx目录。</p>
-<pre><code class="language-cmd" lang="cmd">E:\&gt;cd E:\Java\2020-11-19\1
-
-E:\Java\2020-11-19\1&gt;
+<h2>2、选择结构</h2>
+<p>按一定的条件进行执行（不重复执行）。</p>
+<h3>if</h3>
+<pre><code class="language-java" lang="java">if (条件) {
+	语句;
+}
+else if (条件) {
+    语句;
+}
+...
+else {
+    
+}
 </code></pre>
-<p>&nbsp;</p>
-</li>
-
-</ol>
-<p>&nbsp;</p>
-<h2>编译java程序</h2>
-<p><strong>java区分大小写</strong></p>
-<p>javac -encoding UTF-8 HelloWorld.java ，-encoding UTF-8：编译格式（“ 例如：UTF-8 ”）根据需要填写，<strong>要求要与系统的编码一致</strong>。</p>
-<p><strong>建议使用，可以避免更改掉系统的编码格式：</strong></p>
-<p><img src="https://gitee.com/ZRX001/gallery/raw/master/gallery/image-20201119170124425.png" referrerpolicy="no-referrer" alt="image-20201119170124425"></p>
-<pre><code class="language-cmd" lang="cmd">E:\Java\2020-11-19\1&gt;javac HelloWorld.java
-
-E:\Java\2020-11-19\1&gt;
+<p>条件：true、a&gt;2、a==2……</p>
+<p>其中，if 后面的语句可根据需要曾减。</p>
+<h3>switch</h3>
+<pre><code class="language-java" lang="java">switch(条件) {
+	case 常量1: 语句；break；
+	case 常量2: 语句；break；
+	case 常量3: 语句；break；
+	...
+	default: 语句;break;
+}
 </code></pre>
+<p>条件：true、a&gt;2、a==2……；</p>
+<blockquote><p>条件：如a；</p>
+<p>常量1：如1；</p>
+</blockquote>
+<p>其中，case的顺序不是必须按顺序的，但建议按顺序；</p>
+<p>break根据需要增减。</p>
+<h2>3、循环结构</h2>
+<p>按一定的条件进行执行（重复执行）。</p>
 <p>&nbsp;</p>
-<h2>运行java程序</h2>
-<p>java HelloWorld</p>
-<pre><code class="language-cmd" lang="cmd">E:\Java\2020-11-19\1&gt;java HelloWorld
-hello world
-
-E:\Java\2020-11-19\1&gt;
+<h3>for</h3>
+<pre><code>for (表达式1;表达式2;表达式3) {
+	表达式4;
+}
 </code></pre>
-					
+<p><strong>PS：表达式4为语句。</strong></p>
+<p>表达式1、2、3的执行顺序：</p>
+<p><strong>表达式1&gt;&gt;表达式2&gt;&gt;表达式3</strong></p>
+<p>表达式1&gt;&gt;表达式4&gt;&gt;表达式2&gt;&gt;(满足：执行表达式3 -&gt; 产生<strong>新</strong> -&gt; 表达式4。不满足：退出for循环)</p>
+<p>满足：表达式4&gt;&gt;表达式2&gt;&gt;(满足：执行表达式3 -&gt; 产生<strong>新</strong>-&gt; 表达式4。不满足：退出for循环)</p>
+<p>……</p>
+<p>&nbsp;</p>
+<h3>while</h3>
+<pre><code>while (条件) {
+	语句;
+}
+</code></pre>
+<p>条件：true、a&gt;2、a==2……；<strong>条件</strong>为退出循环的要求。</p>
+<p>while 与 do while的区别，while循环次数&gt;=0（先判断条件，不满足要求，则无法进入循环），do while循环次数&gt;0（先进入循环，再进行条件判断）。</p>
+<h3>do while</h3>
+<pre><code>do {
+	语句;
+}while (条件);
+</code></pre>
+<p>条件：true、a&gt;2、a==2……；<strong>条件</strong>为退出循环的要求。</p>		
 					
 				<!-- ↑  博客输入  ↑ -->	
 				</div>	
 				
 				<div class="skip-bottom">
-					<div class="nextPage"><a href="302002.html"><span class="span-txt">用法</span> <img src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-right.png" alt="右箭头"> </a></div>
+					<div class="previouPage"><a href="302004.html"> <img class="img-l" src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-left.png" alt="左箭头"> <span class="span-txt">方法</span></a></div>
+					<div class="nextPage"><a href="302006.html"><span class="span-txt">xxx</span> <img src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-right.png" alt="右箭头"> </a></div>
 				</div>
 				
 			</div>
