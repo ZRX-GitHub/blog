@@ -312,9 +312,8 @@
 	
 	/* 简述 */
 	/* 文本溢出，省略号，3行 */
-	.data-plate .informations  {
+	.data-plate .informations   {
 /*		height: 106px;*/
-		padding: 0px 4px;
 		border-radius: 5px;
 		text-align: justify;
 		box-sizing: border-box;
@@ -346,6 +345,10 @@
 		width: inherit;
 		margin: 0px auto;
 		border: 0.5px solid gray;
+	}
+	.informations-text-sketch {
+		height: inherit;
+		padding: 0px 4px;
 	}
 	
 	/*1*/
