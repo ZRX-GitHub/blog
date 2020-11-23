@@ -328,7 +328,9 @@ white-space: pre-wrap;
 	border-radius: 5px;
 	padding: 0px 4px;
 }
-
+.article .published {
+	color: #8E8989;
+}
 
 
 
