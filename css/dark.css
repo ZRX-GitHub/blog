@@ -10,20 +10,23 @@
 		background-color: #343434;
 	}
 	body, #myDropdown, .data-classify-right, .travel-right .article, table {
-    	background-color: #444;
-    	color: #e4e4e4;
+    	background-color: #444 !important;
+    	color: #e4e4e4 !important;
   	}
 	#myDropdown a {
 		background-color: #343434;
 	}
 	/*给图片添加一层蒙版*/
-  	.dark-img {
-	 	background: #000;
-		padding-bottom: 0px;
+  	.article .dark-img {
+	 	background: #000 !important;
+		padding-bottom: 0px !important;
 	}
-	img {
-	 	opacity:0.6; 
-		filter: alpha(opacity=60);
+	.article img {
+	 	opacity:0.6 !important; 
+		filter: alpha(opacity=60) !important;
+		width: 100%;
+/*		margin-bottom: -3.6px;*/
+		margin-bottom: -1.2%;
 	}
 	#myBtn {
 		opacity:0.6; 

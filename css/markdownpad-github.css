@@ -231,26 +231,38 @@
 
 /* TABLES
 =============================================================================*/
-
 .article table {
-  max-width: 100%;
+	max-width: 100%;
 }
 .article table th {
-  font-weight: bold;
-}
-
-.article table th, table td {
-  border: 1px solid #ccc;
-  padding: 6px 13px;
-}
-
+	font-weight: bold;
+	}
 .article table tr {
-  border-top: 1px solid #ccc;
-  background-color: #fff;
+	border-top: 1px solid #ccc;
+	background-color: #fff;
 }
 
 .article table tr:nth-child(2n) {
-  background-color: #f8f8f8;
+	background-color: #f8f8f8;
+}
+
+@media all and (min-width: 960px) {
+	
+
+	.article table th, table td {
+		border: 1px solid #ccc;
+		padding: 6px 13px;
+	}
+
+	
+}
+
+@media all and (max-width: 959px) {
+
+	.article table th, table td {
+		border: 1px solid #ccc;
+		padding: 2px 4px;
+	}
 }
 
 /* IMAGES
@@ -283,12 +295,14 @@
 .article bold {
 	font-weight: bold;
 }
+/*  img原带样式
 .article p img:nth-of-type(1) {
 	margin: 10px 0px 20px;
 }
 .article p img:nth-child(1n+2) {
 	margin: -18px 0px 20px;
 }
+*/
 .article pre {
 	font-size: 17px;
 }
