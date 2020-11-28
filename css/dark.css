@@ -13,6 +13,12 @@
     	background-color: #444 !important;
     	color: #e4e4e4 !important;
   	}
+	.article table {
+		background: #AEA8A8 !important;
+	}
+	.article table th, table tr {
+		background-color: #555555 !important;
+	}
 	#myDropdown a {
 		background-color: #343434;
 	}
