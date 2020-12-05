@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>接口类</title>
+<title>抽象类</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link rel="shortcut icon" href="../../../img/favicon.ico" type="image/x-icon">
@@ -36,7 +36,7 @@
 				<span> &gt; </span>
 				<a href="302001.html">Java</a>
 				<span> &gt; </span>
-				<a href="302009.html">接口类</a>
+				<a href="302009.html">抽象类</a>
 			</div>
 			<div class="data-classify-left">
 				<div class="catalog"><p class="text">目 &nbsp; 录</p>
@@ -52,107 +52,86 @@
 					<div class="chapterLine"></div>
 					<a class="chapter" href="302006.html">数组</a>
 					<div class="chapterLine"></div>
-					<a class="chapter" href="302007.html">封装类</a>
+					<a class="chapter" href="302007.html">继承类</a>
 					<div class="chapterLine"></div>
-					<a class="chapter" href="302008.html">抽象类</a>
+					<a class="chapter" href="302008.html">封装类</a>
 					<div class="chapterLine"></div>
-					<a class="chapter" href="302009.html">接口类</a>
+					<a class="chapter" href="302009.html">抽象类</a>
+					<div class="chapterLine"></div>
+					<a class="chapter" href="302010.html">接口类</a>
 				</div>
 			</div>
 			<div class="data-classify-right">
 				
 				<div class="skip-top">
-					<div class="previouPage"><a href="302008.html"> <img class="img-l" src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-left.png" alt="左箭头"> <span class="span-txt">抽象类</span></a></div>
-					<div class="nextPage"><a href="302010.html"><span class="span-txt">xxx</span> <img src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-right.png" alt="右箭头"> </a></div>
+					<div class="previouPage"><a href="302008.html"> <img class="img-l" src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-left.png" alt="左箭头"> <span class="span-txt">封装类</span></a></div>
+					<div class="nextPage"><a href="302010.html"><span class="span-txt">接口类</span> <img src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-right.png" alt="右箭头"> </a></div>
 				</div>
 				
 				<div class="article"> 
 				<!-- ↓  博客输入  ↓ -->
 					
-<p><span class="published">发布于：2020-11-27-2</span></p>
-<h1>接口</h1>
-<p>接口（英文：Interface），在JAVA编程语言中是一个抽象类型，是抽象方法的集合，接口通常以interface来声明。一个类通过继承接口的方式，从而来继承接口的抽象方法。</p>
-<p>接口并不是类，编写接口的方式和类很相似，但是它们属于不同的概念。类描述对象的属性和方法。接口则包含类要实现的方法。</p>
-<p>除非实现接口的类是抽象类，否则该类要定义接口中的所有方法。</p>
-<p>接口无法被实例化，但是可以被实现。一个实现接口的类，必须实现接口内所描述的所有方法，否则就必须声明为抽象类。另外，在 Java 中，接口类型可用来声明一个变量，他们可以成为一个空指针，或是被绑定在一个以此接口实现的对象。</p>
+<p><span class="published">发布于：2020-11-27-1</span></p>
+<h1>抽象类</h1>
+<p>在面向对象的概念中，所有的对象都是通过类来描绘的，但是反过来，并不是所有的类都是用来描绘对象的，如果一个类中没有包含足够的信息来描绘一个具体的对象，这样的类就是抽象类。</p>
+<p>抽象类除了不能实例化对象之外，类的其它功能依然存在，成员变量、成员方法和构造方法的访问方式和普通类一样。</p>
+<p>由于抽象类不能实例化对象，所以抽象类必须被继承，才能被使用。也是因为这个原因，通常在设计阶段决定要不要设计抽象类。</p>
+<p>父类包含了子类集合的常见的方法，但是由于父类本身是抽象的，所以不能使用这些方法。</p>
+<p>在Java中抽象类表示的是一种继承关系，一个类只能继承一个抽象类，而一个类却可以实现多个接口。</p>
 <p>&nbsp;</p>
-<h3>接口与类相似点</h3>
-<ul>
-<li>一个接口可以有多个方法；</li>
-<li>接口文件保存在 .java 结尾的文件中，文件名使用接口名；</li>
-<li>接口的字节码文件保存在 .class 结尾的文件中；</li>
-<li>接口相应的字节码文件必须在与包名称相匹配的目录结构中。</li>
-
-</ul>
-<h3>接口与类的区别</h3>
-<ul>
-<li>接口不能用于实例化对象；</li>
-<li>接口没有构造方法；</li>
-<li>接口中所有的方法必须是抽象方法；</li>
-<li>接口不能包含成员变量，除了 static 和 final 变量；</li>
-<li>接口不是被类继承了，而是要被类实现；</li>
-<li>接口支持多继承。</li>
-
-</ul>
-<p>&nbsp;</p>
-<p>接口是一个更彻底的抽象化-》点击查看抽象类</p>
-<p><em>方法里面的public可以不写，默认也是public</em></p>
+<p>抽象<strong>abstract</strong>，仅可以使用在方法和类中，其中①类可以单独加上，方法可以不使用。②如果是方法使用了抽象<strong>abstract</strong>   ，类也必须加上（在使用了抽象的类中）。</p>
+<p>①</p>
+<pre><code class="language-java" lang="java">public abstract class Test1 {
+    
+}
+</code></pre>
+<p>②</p>
 <pre><code class="language-java" lang="java">package Test1;
 
-public interface IUsb {
-}
+public abstract class Test1 {  // 类上也必须加上
 
-</code></pre>
-<p>接口类里面不允许定义<strong>私有化(private)</strong>的变量。</p>
-<pre><code class="language-java" lang="java">public static final int AGE = 12；
-// 必须一次性初始化，变量为》》常量
-// AGE 永远等于12
-// 即使不写，也可以，因为默认存在public static final
-</code></pre>
-<pre><code class="language-java" lang="java">package Test1;
-
-public interface IUsb {
-    public static void mothod() {
-
-    }
-}
-// 即使不写，也可以，因为默认存在public static
-</code></pre>
-<p>&nbsp;</p>
-<h3>接口和接口的关系</h3>
-<p>可以多继承</p>
-<pre><code class="language-java" lang="java">package Test1;
-
-public interface IUpan extends  IUsb, IDdemo {  // 接口继承接口，可以多继承
-
+    public abstract void dog();  // 使用了abstract
+    // 1、父类无法通过行为来描述
+    // 2、为了让子类去重写该方法（必须），否则子类也必须抽象化
 }
 </code></pre>
 <p>&nbsp;</p>
-<h3>类和接口的关系</h3>
-<p>可以多继承</p>
-<pre><code class="language-java" lang="java">package Test1;
+<h3><strong>使用了抽象类</strong></h3>
+<p>不能和以往一样正常使用，可以通过 #1 来使用</p>
+<blockquote><p>父类：不能创建对象（不能实例化），编译器会提示错误。</p>
+<p>子类：可以创建对象。</p>
+</blockquote>
+<p>&nbsp;</p>
+<h3><strong>main方法中调用</strong> #1</h3>
+<p>可以通过<strong>匿名内部类</strong>来调用，注意分号。</p>
+<ol start="" >
+<li>创建抽象类对象的时候；</li>
+<li>创建接口的实现类对象的时候。</li>
 
-public class Dog implements IUsb { // 可以多继承
-
-    @Override
-    public int getValue() {
-        return 0;
-    }
-}
+</ol>
+<pre><code class="language-java" lang="java">// 只允许使用一次
+Test1 test = new Test1() {
+	@Override
+	public void cat() {
+	
+	}
+};
 </code></pre>
 <p>&nbsp;</p>
-<h3>default关键字</h3>
-<p>没有次数限制</p>
-<pre><code class="language-java" lang="java">public default void fly() {
-        System.out.println(&quot;飞行！&quot;);
-}
-</code></pre>				
+<h3>总结</h3>
+<ol>
+<li>抽象类不能被实例化(初学者很容易犯的错)，如果被实例化，就会报错，编译无法通过。只有抽象类的非抽象子类可以创建对象；</li>
+<li>抽象类中不一定包含抽象方法，但是有抽象方法的类必定是抽象类；</li>
+<li>抽象类中的抽象方法只是声明，不包含方法体，就是不给出方法的具体实现也就是方法的具体功能；</li>
+<li>构造方法，类方法（用 static 修饰的方法）不能声明为抽象方法；</li>
+<li>抽象类的子类必须给出抽象类中的抽象方法的具体实现，除非该子类也是抽象类。</li>
+</ol>				
 				<!-- ↑  博客输入  ↑ -->	
 				</div>	
 				
 				<div class="skip-bottom">
-					<div class="previouPage"><a href="302008.html"> <img class="img-l" src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-left.png" alt="左箭头"> <span class="span-txt">抽象类</span></a></div>
-					<div class="nextPage"><a href="302010.html"><span class="span-txt">xxx</span> <img src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-right.png" alt="右箭头"> </a></div>
+					<div class="previouPage"><a href="302008.html"> <img class="img-l" src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-left.png" alt="左箭头"> <span class="span-txt">封装类</span></a></div>
+					<div class="nextPage"><a href="302010.html"><span class="span-txt">接口类</span> <img src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-right.png" alt="右箭头"> </a></div>
 				</div>
 				
 			</div>
