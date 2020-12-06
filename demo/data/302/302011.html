@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>CMD执行Java程序</title>
+<title>多态类</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link rel="shortcut icon" href="../../../img/favicon.ico" type="image/x-icon">
@@ -36,7 +36,7 @@
 				<span> &gt; </span>
 				<a href="302001.html">Java</a>
 				<span> &gt; </span>
-				<a href="302001.html">CMD执行Java程序</a>
+				<a href="302011.html">多态类</a>
 			</div>
 			<div class="data-classify-left">
 				<div class="catalog"><p class="text">目 &nbsp; 录</p>
@@ -66,69 +66,74 @@
 			<div class="data-classify-right">
 				
 				<div class="skip-top">
-					<div class="nextPage"><a href="302002.html"><span class="span-txt">Java规则</span> <img src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-right.png" alt="右箭头"> </a></div>
+					<div class="previouPage"><a href="302010.html"> <img class="img-l" src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-left.png" alt="左箭头"> <span class="span-txt">接口类</span></a></div>
+					<div class="nextPage"><a href="302012.html"><span class="span-txt">xxx</span> <img src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-right.png" alt="右箭头"> </a></div>
 				</div>
 				
 				<div class="article"> 
 				<!-- ↓  博客输入  ↓ -->
 					
-<h1>CMD执行java程序</h1>
-<h2>cmd简单切换</h2>
-<ol>
-<li><p><strong>win+ r</strong>：打开cmd命令台，cmd打开默认进入C盘。&quot; E: &quot;,进入E盘根目录。</p>
-<pre><code class="language-cmd" lang="cmd">C:\Users\10119&gt;E:
-
-E:\&gt;
-</code></pre>
+<p><span class="published">发布于：2020-11-27-3</span></p>
+<h1>多态</h1>
+<p>Java的三大特性（什么时候用）：<strong>封装</strong>是 Java 类的编写规范、<strong>继承</strong>是类与类之间联系的一种形式、而<strong>多态</strong>为系统组件或模块之间解耦提供了解决方案。</p>
 <p>&nbsp;</p>
-</li>
+<p><strong>定义</strong></p>
+<p>多态是同一个行为具有多个不同表现形式或形态的能力。</p>
+<p>&nbsp;</p>
+<p><strong>优点</strong></p>
+<ol>
+<li>消除类型之间的耦合关系</li>
 
 </ol>
 <ol start="2" >
-<li>dir 打开当前目录下的文件夹(在知道文件夹的位置情况下可忽略)。</li>
+<li>可替换性</li>
 
 </ol>
 <ol start="3" >
-<li><p>选择你要的文件夹，比如：cd E:\XXX  进入程序xxx目录。</p>
-<pre><code class="language-cmd" lang="cmd">E:\&gt;cd E:\Java\2020-11-19\1
+<li>可扩充性</li>
 
-E:\Java\2020-11-19\1&gt;
-</code></pre>
+</ol>
+<ol start="4" >
+<li>接口性</li>
+
+</ol>
+<ol start="5" >
+<li>灵活性</li>
+
+</ol>
+<ol start="6" >
+<li>简化性</li>
+
+</ol>
+<h3>多态存在的三个必要条件</h3>
+<ul>
+<li><p>继承</p>
+</li>
+<li><p>重写</p>
+</li>
+<li><p>父类引用指向子类对象：Parent p = new Child();</p>
 <p>&nbsp;</p>
 </li>
 
-</ol>
+</ul>
+<p>当使用多态方式调用方法时，首先检查父类中是否有该方法，如果没有，则编译错误；如果有，再去调用子类的同名方法。</p>
+<p><strong>好处</strong>：可以使程序有良好的扩展，并可以对所有类的对象进行通用处理。</p>
 <p>&nbsp;</p>
-<h2>编译java程序</h2>
-<p><strong>java区分大小写</strong></p>
-<p>javac -encoding UTF-8 HelloWorld.java ，-encoding UTF-8：编译格式（“ 例如：UTF-8 ”）根据需要填写，<strong>要求要与系统的编码一致</strong>。</p>
-<p><strong>建议使用，可以避免更改掉系统的编码格式：</strong></p>
-<div class="dark-img"><img class="zooming" src="https://gitee.com/ZRX001/gallery/raw/master/gallery/image-20201119170124425.png" referrerpolicy="no-referrer" alt="image-20201119170124425"></div>
-<pre><code class="language-cmd" lang="cmd">E:\Java\2020-11-19\1&gt;javac HelloWorld.java
-
-E:\Java\2020-11-19\1&gt;
-</code></pre>
-<p>&nbsp;</p>
-<h2>运行java程序</h2>
-<p>java HelloWorld</p>
-<pre><code class="language-cmd" lang="cmd">E:\Java\2020-11-19\1&gt;java HelloWorld
-hello world
-
-E:\Java\2020-11-19\1&gt;
-</code></pre>
-					
+<h3>转型</h3>
+<p>向下、向上转型，请参考以下链接。</p>
+<p><a href="https://www.cnblogs.com/lifexy/p/10812841.html" target="_blank" class="url">https://www.cnblogs.com/lifexy/p/10812841.html</a></p>
 					
 				<!-- ↑  博客输入  ↑ -->	
 				</div>	
 				
 				<div class="skip-bottom">
-					<div class="nextPage"><a href="302002.html"><span class="span-txt">用法</span> <img src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-right.png" alt="右箭头"> </a></div>
+					<div class="previouPage"><a href="302010.html"> <img class="img-l" src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-left.png" alt="左箭头"> <span class="span-txt">接口类</span></a></div>
+					<div class="nextPage"><a href="302012.html"><span class="span-txt">xxx</span> <img src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-right.png" alt="右箭头"> </a></div>
 				</div>
 				
 			</div>
 		</div>
 		<button onclick="topFunction()" id="myBtn" title="返回顶部"></button>
-		<script src="../../../js/zooming.min.js"></script>
 		<script src="../../../js/bottomJS.js"></script>
 		
 		<!-- 
