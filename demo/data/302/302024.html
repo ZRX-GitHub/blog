@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>多线程</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel="shortcut icon" href="../../../img/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="../../../css/nav-auto.css">
+<link rel="stylesheet" href="../../../css/css.css">
+<link rel="stylesheet" href="../../../css/markdownpad-github.css">
+<link rel="stylesheet" href="../../../css/data-classify-auto.css">
+<link rel="stylesheet" href="../../../css/dark.css">
+<script src="../../../js/topJS.js" type="text/javascript"></script>
+<script src="../../../js/data.js" type="text/javascript"></script>
+</head>
+	<body class="data-index">
+		<div class="header">
+			<div class="logo"><img src="../../../img/logo.png" alt=""></div>
+			<div class="dropdown" id="dropdown">
+				<div onclick="myFunction()" class="dropbtn"></div>
+				<div id="myDropdown" class="dropdown-content">
+					<div class="nav">		
+						<a href="../../../index.html"><div class="ul" id="index">主页<div class="nav-line"></div></div></a>
+						<a href="../../travel.html"><div class="ul" id="demo1">踏行<div class="nav-line"></div></div></a>
+						<a href="../../data.html"><div class="ul" id="demo2">资料<div class="nav-line"></div></div></a>
+						<a href="../../build.html"><div class="ul" id="demo3">建站<div class="nav-line"></div></div></a>
+						<a href="../../about.html"><div class="ul" id="demo4">关于<div class="nav-line"></div></div></a>
+					</div>
+				</div>
+			</div>	
+		</div>
+		<div id="main">
+			<div class="nav-article">
+				<span>当前所在位置：</span>
+				<a href="../../data.html">资料</a>
+				<span> &gt; </span>
+				<a href="302001.html">Java</a>
+				<span> &gt; </span>
+				<a href="302013.html">流的处理</a>
+			</div>
+			<div class="data-classify-left">
+				<div class="catalog"><p class="text">目 &nbsp; 录</p>
+					<a class="chapter" href="302001.html">CMD执行Java程序</a>
+					<div class="chapterLine"></div>
+					<a class="chapter" href="302002.html">Java规则</a>
+					<div class="chapterLine"></div>
+					<a class="chapter" href="302003.html">运算符</a>
+					<div class="chapterLine"></div>
+					<a class="chapter" href="302004.html">方法</a>
+					<div class="chapterLine"></div>
+					<a class="chapter" href="302005.html">流程控制</a>
+					<div class="chapterLine"></div>
+					<a class="chapter" href="302006.html">数组</a>
+					<div class="chapterLine"></div>
+					<a class="chapter" href="302007.html">继承类</a>
+					<div class="chapterLine"></div>
+					<a class="chapter" href="302008.html">封装类</a>
+					<div class="chapterLine"></div>
+					<a class="chapter" href="302009.html">抽象类</a>
+					<div class="chapterLine"></div>
+					<a class="chapter" href="302010.html">接口类</a>
+					<div class="chapterLine"></div>
+					<a class="chapter" href="302011.html">多态类</a>
+					<div class="chapterLine"></div>
+					<a class="chapter" href="302012.html">-- 预留12~20 --</a>
+					<div class="chapterLine"></div>
+					<a class="chapter" href="302021.html">流的处理</a>
+					<div class="chapterLine"></div>
+					<a class="chapter" href="302022.html">二进制文件的读取</a>
+					<div class="chapterLine"></div>
+					<a class="chapter" href="302023.html">序列化</a>
+					<div class="chapterLine"></div>
+					<a class="chapter" href="302024.html">多线程</a>
+				</div>
+			</div>
+			<div class="data-classify-right">
+				
+				<div class="skip-top">
+					<div class="previouPage"><a href="302023.html"> <img class="img-l" src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-left.png" alt="左箭头"> <span class="span-txt">序列化</span></a></div>
+					<div class="nextPage"><a href="xxx"><span class="span-txt">xxx</span> <img src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-right.png" alt="右箭头"> </a></div>
+				</div>
+				
+				<div class="article"> 
+				<!-- ↓  博客输入  ↓ -->
+					
+<p><span class="published">发布于：2020-12-9-3</span></p>
+<h1>多线程</h1>
+<p>线程的简介</p>
+<p>1、什么是程序、进程、线程</p>
+<p><strong>程序</strong>：指令和数据的有序集合，本身没有任何运行的含义，是一个静态的概念</p>
+<p><strong>进程</strong>：执行程序的一次执行过程，他是一个动态的概念</p>
+<p><strong>线程</strong>：通常一个进程可用包含若干个线程，当然一个进程，至少有一个线程，不然就没存在的意义了。进行是CPU调度和执行的单位</p>
+<p>&nbsp;</p>
+<p>核心概念：</p>
+<ol>
+<li>线程就是独立执行的路径；</li>
+<li>在程序运行的时候，即使没有字节创建线程，后台也会有多个线程，如主线程；</li>
+<li>main() 称为主线程，是程序执行的入口，用于执行整个程序；</li>
+<li>在一个进程中，如果开辟了多个线程，线程的运行是由调度器安排调度的；</li>
+<li>对于同一份资源操作的时候，会存在抢夺资源问题，这时候就需要加入并发控制；</li>
+<li>线程会带来额外的开销，比如CPU调度问题，并发控制开销。</li>
+
+</ol>
+<p>&nbsp;</p>
+<h3>线程的创建与启动</h3>
+<p>class  Thread  --&gt; 继承 Thread（掌握）</p>
+<p>Runable  接口   --&gt; 实现 Runable接口（重点）</p>
+<p>callable  接口  --&gt; 实现callable接口（了解）</p>
+<p>&nbsp;</p>
+<h3>线程的实现（重点）</h3>
+<p>Thread类的常用方法：</p>
+<figure><table>
+<thead>
+<tr><th>类型/添加</th><th>方法名</th><th>功能</th></tr></thead>
+<tbody><tr><td>static Thread +</td><td>currentThread()</td><td>得到当前线程</td></tr><tr><td>String</td><td>getName()</td><td>返回线程的名称</td></tr><tr><td>void</td><td>setName(String name)</td><td>设置线程的名称</td></tr><tr><td>int</td><td>getPriority()</td><td>设置线程的优先级</td></tr><tr><td>void</td><td>start()</td><td>调用run()  的方法启动线程，开启线程的执行</td></tr><tr><td>void</td><td>run()</td><td>存放线程的代码</td></tr><tr><td>boolean</td><td>isAlive()</td><td>判断线程是否还活着</td></tr></tbody>
+</table></figure>
+<p> </p>
+<h5>继承Thread类，创建线程</h5>
+<ol>
+<li>自定义线程类，继承Thread类；</li>
+<li>重写run()方法，编写线程执行的代码；</li>
+<li>创建线程对象，编写start()方法启动线程。</li>
+
+</ol>
+<p>通过创建Thread类的对象调用start() 方法，调用后，由JVM去调用run()方法；</p>
+<p>直接调用run（）和调用star（）方法的区别；</p>
+<p>直接调用run()方表示只有mian主线程在运行，不会创建子线程；</p>
+<p>调用start()方法才会去创建一个子线程。</p>
+<p>&nbsp;</p>
+<h5>Runnable接口创建多线程</h5>
+<ol>
+<li>定义一个类去实现Runnable接口；</li>
+<li>实现run()方法，在run()方法中写执行代码；</li>
+<li>创建线程对象，调用start()方法启动线程。</li>
+
+</ol>
+<p><strong>总结</strong></p>
+<p><strong>继承Thread类</strong></p>
+<ul>
+<li>子类继承实现多线程能力；</li>
+<li>通过子类对象.strat()启动线程；</li>
+<li>继承只能单继承，有局限性，一般不建议使用。</li>
+
+</ul>
+<p><strong>实现Runnable接口</strong></p>
+<ul>
+<li>通过实现Runnable计科具备多线程能力；</li>
+<li>传入目标对象 + Thread对象.start()来启动线程；</li>
+<li>避免单继承的局限性，灵活方便，方便同一个对象被对多个线程使用。</li>
+
+</ul>
+<p>&nbsp;</p>
+<h3>线程的状态</h3>
+<p>&nbsp;</p>
+<h3>线程的同步（重点）</h3>
+<p>&nbsp;</p>
+<h3>线程通信问题</h3>
+<p>&nbsp;</p>
+<h3>线程高级主题</h3>
+					
+				<!-- ↑  博客输入  ↑ -->	
+				</div>	
+				
+				<div class="skip-bottom">
+					<div class="previouPage"><a href="302023.html"> <img class="img-l" src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-left.png" alt="左箭头"> <span class="span-txt">序列化</span></a></div>
+					<div class="nextPage"><a href="xxx"><span class="span-txt">xxx</span> <img src="https://gitee.com/ZRX001/gallery/raw/master/gallery/arrow-right.png" alt="右箭头"> </a></div>
+				</div>
+				
+			</div>
+		</div>
+		<button onclick="topFunction()" id="myBtn" title="返回顶部"></button>
+		<script src="../../../js/bottomJS.js"></script>
+		
+		<!-- 
+
+		<script src="../../../js/prettify.js" type="text/javascript"></script>
+		<script src="../../../js/run_prettify.js" type="text/javascript"></script>   
+
+		-->
+	</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
