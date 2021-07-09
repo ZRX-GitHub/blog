@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>通讯录</title>
+
+    <link rel="stylesheet" href="../project.css">
+    <style>
+        #tableTitle {
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        table {
+            width: 400px;
+            height: auto;
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+        
+        tr {
+            height: 30px;
+        }
+        
+        th,
+        td {
+            border: 1px solid gray;
+        }
+        
+        th:nth-of-type(1) {
+            width: 16%;
+        }
+        
+        th:nth-of-type(2) {
+            width: 20%;
+        }
+        
+        th:nth-of-type(3) {
+            width: 44%;
+        }
+        
+        th:nth-of-type(4) {
+            width: 20%;
+        }
+        
+        td {
+            text-align: center;
+        }
+        
+        #add {
+            width: 400px;
+            height: 30px;
+            line-height: 30px;
+            background-color: rgb(10, 170, 10);
+            margin: 10px auto 0px;
+            text-align: center;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        
+        #add:hover {
+            color: white;
+            font-weight: bold;
+            background-color: rgb(19, 187, 19);
+        }
+    </style>
+</head>
+
+<body>
+    <a class="project-introduce-a" href="http://1.15.142.19/item/web/401/401002">
+        <div class="project-introduce-text"></div>
+    </a>
+    <p id="tableTitle">通讯录</p>
+    <table id="add_table">
+        <tr>
+            <th>序号</th>
+            <th>姓名</th>
+            <th>电话</th>
+            <th>操作</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>测试</td>
+            <td>1111111111</td>
+            <td><button onclick="del(this)">删除</button></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>测试</td>
+            <td>122222222</td>
+            <td><button onclick="del(this)">删除</button></td>
+        </tr>
+    </table>
+    <div id="add" onclick="add(this)">添加</div>
+</body>
+<script>
+    flag = true;
+
+    // 定义自增减的序号
+    var i = 3;
+
+    // 执行删除操作
+    function del(thisbutton) {
+        tr = thisbutton.parentNode.parentNode;
+        mytable = tr.parentNode;
+        mytable.removeChild(tr);
+        i--;
+    }
+
+    // 执行添加操作
+    function add(thisdiv) {
+        add_table = document.getElementById('add_table');
+
+        tr = document.createElement('tr'); // 创建一行
+        // 创建td，4列
+        for (let j = 0; j <= 3; j++) {
+            td = document.createElement('td');
+
+            // 每一行的第一列，添加自增的序号
+            if (j == 0) {
+                no = document.createTextNode(i++);
+                td.appendChild(no);
+            }
+
+            // 添加button，内包含  删除字样
+            if (j == 3) {
+                button = document.createElement('button');
+                button.setAttribute('onclick', 'del(this)');
+                buttonText = document.createTextNode('删除');
+                button.appendChild(buttonText);
+                td.appendChild(button);
+            }
+
+            tr.appendChild(td);
+
+        }
+
+        add_table.appendChild(tr);
+    }
+</script>
+
+</html>
