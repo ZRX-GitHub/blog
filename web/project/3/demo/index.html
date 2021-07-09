@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/css.css">
+    <link rel="stylesheet" href="css/haeder.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/jquery-3.3.1.js"></script>
+    <!-- 引入ElementUI  CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+
+    <title>仿项目官网</title>
+
+    <link rel="stylesheet" href="../../project.css">
+</head>
+
+<body>
+    <a class="project-introduce-a" href="http://1.15.142.19/item/web/401/401003">
+        <div class="project-introduce-text"></div>
+    </a>
+    <div class="header">
+        <!-- 用于占位 -->
+        <div></div>
+        <!-- 头部导航 -->
+        <div class="h-nav-main">
+            <!-- H5菜单Icon -->
+            <div>
+                <img src="images/汉堡图标_hamburger-button.svg" alt="">
+            </div>
+            <div class="h-nav">
+                <div>
+                    <a href="">首页</a>
+                </div>
+                <div class="h-nav-Menu h-nav-Menu1">
+                    <a href="" class="menu-btn">项目对接<img src="images/下_down.png" alt=""></a>
+                    <ul class="topDown1 topDown">
+                        <li><a href="">a1</a></li>
+                        <li><a href="">a2</a></li>
+                        <li><a href="">a3</a></li>
+                    </ul>
+                </div>
+                <div class="h-nav-Menu h-nav-Menu2">
+                    <a href="" class="menu-btn">企业服务<img src="images/下_down.png" alt=""></a>
+                    <ul class="topDown2 topDown">
+                        <li><a href="">b1</a></li>
+                        <li><a href="">b2</a></li>
+                        <li><a href="">b3</a></li>
+                    </ul>
+                </div>
+                <div class="h-nav-Menu h-nav-Menu3">
+                    <a href="" class="menu-btn">技能培训<img src="images/下_down.png" alt=""></a>
+                    <ul class="topDown3 topDown">
+                        <li><a href="">c1</a></li>
+                        <li><a href="">c2</a></li>
+                        <li><a href="">c3</a></li>
+                    </ul>
+                </div>
+                <div class="h-nav-Menu h-nav-Menu4">
+                    <a href="" class="menu-btn">资源中心<img src="images/下_down.png" alt=""></a>
+                    <ul class="topDown4 topDown">
+                        <li><a href="">d1</a></li>
+                        <li><a href="">d2</a></li>
+                        <li><a href="">d3</a></li>
+                    </ul>
+                </div>
+                <div class="h-nav-Menu h-nav-Menu5">
+                    <a href="" class="menu-btn">求职招聘<img src="images/下_down.png" alt=""></a>
+                    <ul class="topDown5 topDown">
+                        <li><a href="">e1</a></li>
+                        <li><a href="">e2</a></li>
+                        <li><a href="">e3</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+
+            <!-- 登录 -->
+            <div class="login">
+                <div>
+                    <img alt=""><span>人才登录</span>
+                </div>
+                <div>
+                    <img alt=""><span>企业用户登录</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 头部轮播图 -->
+    <div id="slideShow">
+        <template>
+            <div class="block">
+                <el-carousel :interval="5000" arrow="hover" :height="bannerHeight+'px'">
+                    <el-carousel-item v-for="item in imgList" :key="item.id">
+                        <img ref="bannerHeight" :src="item.idView" alt="" @load="imgLoad" style="width: 100%;">
+                    </el-carousel-item>
+                </el-carousel>
+            </div>
+        </template>
+    </div>
+
+
+    <!-- 中部内容 -->
+    <div class="main">
+        <!-- 中间内容 -->
+        <div class="center">
+            <!-- 搜索框 -->
+            <div class="search">
+                <input type="text">
+                <div class="search-icon"></div>
+            </div>
+
+
+            <!-- 5个入口 -->
+
+            <div class="entrances">
+                <div class="entrancesChoose">
+                    <div class="img1"></div>
+                    <div>双百计划申报入口</div>
+                </div>
+                <div class="entrancesChoose ">
+                    <div class="img2"></div>
+                    <div>
+                        <p>青年创新创业人才，</p>
+                        <p>计划申报入口</p>
+                    </div>
+
+                </div>
+                <div class="entrancesChoose ">
+                    <div class="img3"></div>
+                    <div>
+                        <p>国家、省、市，</p>
+                        <p>人才政策索引</p>
+                    </div>
+
+                </div>
+                <div class="entrancesChoose ">
+                    <div class="img4"></div>
+                    <div>
+                        <p>人才项目资本合作展，</p>
+                        <p>展品项目征集入口</p>
+                    </div>
+
+                </div>
+                <div class="entrancesChoose ">
+                    <div class="img5"></div>
+                    <div>
+                        <p>南京市人才信息，</p>
+                        <p>综合管理系统</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- 信息中心 -->
+            <div class="information ">
+                <div class="information-small ">
+                    <div class="information-small-top ">
+                        <span>项目对接</span>
+                        <span>···</span>
+                    </div>
+                    <ul>
+                        <li>
+                            <p>
+                                <span>南方多省系统调优</span>
+                                <span>2021-01-01</span>
+                            </p>
+
+                        </li>
+                        <li>
+                            <p>
+                                <span>谷歌chrome浏览器下的中控指纹仪接口web调用</span>
+                                <span>2021-01-01</span>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <span>高级前端angular2人力外包</span>
+                                <span>2021-01-01</span>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <span>支持4种主题和在线换肤：线性、填充、双色、四色。</span>
+                                <span>2021-01-01</span>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <span>网站提供多种便捷操作：复制SVG code、复制React 组件、复制Vue组件、下载PNG、下载SVG。</span>
+                                <span>2021-01-01</span>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <span>针对技术同学，支持图标组件NPM包导出，包括React Icons/ Vue Icons/ Vue3 Icons / SVG Icons。</span>
+                                <span>2021-01-01</span>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <span>提供超1600高质量图标，免费使用，此处给我们勤劳的设计师们点赞~o(￣▽￣)ｄ</span>
+                                <span>2021-01-01</span>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <span>根据单一SVG源文件变换多主题，包括：线框、填充、双色、多色，无需使用4种风格的SVG文件</span>
+                                <span>2021-01-01</span>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="information-small ">
+                    <div class="information-small-top ">
+                        <span>资讯中心</span>
+                        <span>···</span>
+                    </div>
+                    <ul>
+                        <li>
+                            <p>
+                                <span>在使用 Vue 时，我们推荐在你的浏览器上安装 Vue Devtools。它允许你在一个更友好的界面中审查和调试 Vue 应用。</span>
+                                <span>2021-01-01</span>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <span>直接下载并用 &lt;script&gt;标签引入，Vue 会被注册为一个全局变量。</span>
+                                <span>2021-01-01</span>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <span>在开发环境下不要使用压缩版本，不然你就失去了所有常见错误相关的警告!</span>
+                                <span>2021-01-01</span>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <span>对于制作原型或学习，你可以这样使用最新版本。</span>
+                                <span>2021-01-01</span>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <span>对于生产环境，我们推荐链接到一个明确的版本号和构建文件，以避免新版本造成的不可预期的破坏。</span>
+                                <span>2021-01-01</span>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <span>如果你使用原生 ES Modules，这里也有一个兼容 ES Module 的构建文件。</span>
+                                <span>2021-01-01</span>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <span>请确认了解不同构建版本并在你发布的站点中使用生产环境版本，把 vue.js 换成 vue.min.js。这是一个更小的构建，可以带来比开发环境下更快的速度体验。</span>
+                                <span>2021-01-01</span>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <span>在用 Vue 构建大型应用时推荐使用 NPM 安装[1]。NPM 能很好地和诸如 webpack 或 Browserify 模块打包器配合使用。同时 Vue 也提供配套工具来开发单文件组件。</span>
+                                <span>2021-01-01</span>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="information-small ">
+                    <div class="information-small-top ">
+                        <span>工作动态</span>
+                        <span>···</span>
+                    </div>
+                    <ul>
+                        <li>
+                            <p>
+                                <span>与现实生活一致：与现实生活的流程、逻辑保持一致，遵循用户习惯的语言和概念。</span>
+                                <span>2021-01-01</span>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <span>在界面中一致：所有的元素和结构需保持一致，比如：设计样式、图标和文本、元素的位置等。</span>
+                                <span>2021-01-01</span>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <span>控制反馈：通过界面样式和交互动效让用户可以清晰的感知自己的操作。</span>
+                                <span>2021-01-01</span>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <span>页面反馈：操作后，通过页面元素的变化清晰地展现当前状态。</span>
+                                <span>2021-01-01</span>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <span>简化流程：设计简洁直观的操作流程。</span>
+                                <span>2021-01-01</span>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <span>清晰明确：语言表达清晰且表意明确，让用户快速理解进而作出决策。</span>
+                                <span>2021-01-01</span>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <span>帮助用户识别：界面简单直白，让用户快速识别而非回忆，减少用户记忆负担。</span>
+                                <span>2021-01-01</span>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <span>用户决策：根据场景可给予用户操作建议或安全提示，但不能代替用户进行决策。</span>
+                                <span>2021-01-01</span>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <!-- 技能培训 -->
+            <div class="skillsTrainingTitel ">
+                技能培训
+                <div class="moduleTitleLine "></div>
+            </div>
+            <div class="skillsTraining ">
+                <div>
+                    <div>
+                        <img src="images/1.jpg" alt="">
+                    </div>
+                    <div>人脸识别完整项目实战（附源码）</div>
+                </div>
+                <div>
+                    <div>
+                        <img src="images/2.jpg" alt="">
+                    </div>
+                    <div>神经网络和深度学习</div>
+                </div>
+                <div>
+                    <div>
+                        <img src="images/3.jpg" alt="">
+                    </div>
+                    <div>序列模型</div>
+                </div>
+                <div>
+                    <div>
+                        <img src="images/4.jpg" alt="">
+                    </div>
+                    <div>金融建模专题课程权益类产品估值</div>
+                </div>
+                <div>
+                    <div>
+                        <img src="images/5.jpg" alt="">
+                    </div>
+                    <div>人工智能百度Al：语音合成</div>
+                </div>
+                <div>
+                    <div>
+                        <img src="images/6.jpg" alt="">
+                    </div>
+                    <div>自然语言处理动手学Bert文本分类</div>
+                </div>
+            </div>
+
+
+            <!-- 招聘专场 -->
+            <div class="specialTitle">
+                招聘专场
+                <div class="moduleTitleLine "></div>
+            </div>
+            <div class="special">
+                <div>
+                    <img class="zooming" src="images/招聘12.png" alt="">
+                </div>
+                <div>
+                    <img class="zooming" src="images/招聘2.png" alt="">
+                </div>
+                <div>
+                    <img class="zooming" src="images/招聘3.png" alt="">
+                </div>
+                <div>
+                    <img class="zooming" src="images/招聘4.png" alt="">
+                </div>
+                <div>
+                    <img class="zooming" src="images/招聘5.png" alt="">
+                </div>
+                <div>
+                    <img class="zooming" src="images/招聘6.png" alt="">
+                </div>
+                <div>
+                    <img class="zooming" src="images/招聘7.png" alt="">
+                </div>
+                <div>
+                    <img class="zooming" src="images/招聘8.png" alt="">
+                </div>
+                <div>
+                    <img class="zooming" src="images/招聘9.png" alt="">
+                </div>
+                <div>
+                    <img class="zooming" src="images/招聘10.png" alt="">
+                </div>
+                <div>
+                    <img class="zooming" src="images/招聘11.png" alt="">
+                </div>
+                <div>
+                    <img class="zooming" src="images/招聘12.png" alt="">
+                </div>
+            </div>
+
+
+            <!-- 问答 -->
+            <div class="QA ">
+                <div class="QAContent ">
+                    <p>
+                        <span>更多疑问 全面解答</span>
+                    </p>
+                    <div></div>
+                    <p>行业内数十年项目总监在线为您解答所有疑惑</p>
+                    <div class="freeQues ">
+                        免费咨询
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- PC-右部的侧导航栏+返回顶部按钮；H5-只显示返回顶部按钮 -->
+        <div class="right ">
+            <div>
+                <p>海纳</p>
+                <p>百川</p>
+            </div>
+            <div>
+                <p>双百</p>
+                <p>计划</p>
+            </div>
+            <!-- 二维码 -->
+            <div id="QRCode"></div>
+            <!-- 收藏 -->
+            <div id="collect"></div>
+            <!-- 返回顶部 -->
+            <div id="backTop" onclick="top_function()"></div>
+        </div>
+
+
+        <!-- 底部导航\联系 -->
+        <footer class="footerTop">
+            <div class="footerTopCenter">
+                <div class="link">
+                    <h4>本期精选</h4>
+                    <p><span></span><span>流行框架</span></p>
+                    <p><span></span>精品微课</p>
+                    <p><span></span>免费课程</p>
+                    <p><span></span>课程实践</p>
+                    <p><span></span>资料下载</p>
+                </div>
+                <div class="link">
+                    <h4>友情链接</h4>
+                    <p><span></span>行业资讯</p>
+                    <p><span></span>就业指南</p>
+                    <p><span></span>常见问题</p>
+                    <p><span></span>最新资讯</p>
+                    <p><span></span>视频在线</p>
+                </div>
+                <div class="link">
+                    <h4>主办单位</h4>
+                    <p><span></span>88公司</p>
+                    <h4>承办单位</h4>
+                    <p><span></span>66公司</p>
+                    <h4>技术支持</h4>
+                    <p><span></span>Simple</p>
+                </div>
+                <div class="call">
+                    <h4>联系我们</h4>
+                    <div></div>
+                    <div>
+                        <img src="images/电话_phone-one.png" alt="">025-12345678
+                    </div>
+                    <div>
+                        <img src="images/沟通_communication.png" alt="">88888888
+                    </div>
+                    <div>
+                        <img src="images/手机_phone.png" alt="">18888888888
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+        <!-- 最底部 -->
+        <footer class="copy ">
+            <div class="copyText">
+                <p>Copyright &copy;&nbsp;2010-2019 xxxx.com All Rights Reversed.Simple</p>
+                <p>苏公网安备&nbsp;xxxxxxxxxx号<img src="images/record.png" alt=""></p>
+            </div>
+        </footer>
+
+    </div>
+</body>
+<!-- 引入vue组件库 -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+<!-- 引入ElementUI组件库 -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<!-- 引入JavaScript图片缩放库 -->
+<script src="js/zooming.min.js"></script>
+<script src="js/js.js"></script>
+
+</html>

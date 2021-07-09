@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Vue实现记事本</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="../../project.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+</head>
+
+<body>
+    <a class="project-introduce-a" href="http://1.15.142.19/item/web/401/401004">
+        <div class="project-introduce-text"></div>
+    </a>
+
+    <div class="main">
+        <h1>记事本</h1>
+        <!-- 主体区域 -->
+        <section id="noteApp">
+            <!-- 输入框 -->
+            <header>
+                <input type="text" id="new-note" v-model="inputValue" @keyup.enter="add" placeholder="请输入信息" />
+            </header>
+
+            <!-- 主体区域 -->
+            <section class="content">
+                <ul class="note-list">
+                    <li v-for="(item, index) in list" class="note">
+                        <div class="view">
+                            <span class="index">{{index+1}}.</span>
+                            <label>{{item}}</label>
+                            <button type="button" class="list-clear" @click="remove">
+								X
+							</button>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- 统计情况区域 -->
+            <footer>
+                <span class="note-count" v-if="list.length">
+					<strong>{{list.length}}</strong>item left
+				</span>
+                <button type="button" class="" @click="clear">Clear</button>
+            </footer>
+
+        </section>
+
+    </div>
+</body>
+<script type="text/javascript">
+    var noteApp = new Vue({
+        el: "#noteApp",
+        data: {
+            list: ["写代码", "睡觉", "吃法"],
+            inputValue: ""
+        },
+        methods: {
+            // 在input框内输入数据
+            add: function() {
+                this.list.push(this.inputValue)
+            },
+            // 删除单条数据
+            remove: function(index) {
+                this.list.splice(index, 1)
+            },
+            // 清除全部数据
+            clear: function() {
+                this.list = []
+            }
+        }
+    })
+</script>
+
+</html>
